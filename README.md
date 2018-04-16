@@ -91,3 +91,66 @@ If an option has no Value, it instead defaults to use the index of the option, w
 
 - The **Options Factory** property (optional) is a subclass of the **SettingOptionFactory** class which can be used to dynamically construct a list of options for the setting by overriding the **ConstructOptions** function. For example, **ResolutionOptionFactory** constructs a list of all fullscreen resolutions that are supported by the system running the game.
 
+### Applying and Saving Manually
+
+You might not want to have your settings automatically apply or save when the user changes them.
+
+In this case, you can uncheck the **Auto Apply** and **Auto Save** properties on the settings, and instead call the **Apply**, **Save**, and **Cancel** functions on the setting widgets manually.
+
+You would likely want to call these functions when other buttons in your UI are pressed.
+
+![Image](/images/image14.png)
+
+There is also a pure function called **HasUnsavedChange** which can be used to determine if a save button should be clickable, or to display a prompt to the user asking if they want to discard unsaved changes.
+
+To make life easier, there are also versions of these functions that operate on multiple settings at the same time.
+
+![Image](/images/image16.png)
+
+These functions operate on all the child settings in the layout of the User Widget (Blueprint widget) they are being called from, including settings in Named Slots. You can specify a User Widget to use instead, and also filter for settings that are underneath a specific parent widget, which might be useful if your menu has separate pages in the same User Widget which should be applied and saved independently from each other.
+
+### Console Variables
+
+Auto Settings is built on top of Unreal’s Console Variable (CVar) system, so adding a new setting always requires a CVar to exist for that setting. Unreal has hundreds of CVars built in which can be exposed with Auto Settings.
+For a full list, check **Help > Console Variables** in the editor.
+
+There are cases in which you might want to expose something as a setting that isn’t built into Unreal by default, for example audio levels.
+
+There are a few components to doing this:
+1. Registering the CVar
+2. Using the CVar to control something in the game
+3. Adding a setting for the CVar (already covered)
+
+Registering and using CVars in c++ is covered in Epic’s documentation [here](https://docs.unrealengine.com/latest/INT/Programming/Development/Tools/ConsoleManager/index.html).
+
+There are also functions in this plugin to expose this to Blueprint, so I’ll outline them here.
+
+Registering CVars is best done as early as possible, so unless you can use c++ I would suggest doing it in your GameInstance class in the **Init** event.
+
+![Image](/images/image10.png)
+
+Here you can call functions to register float, integer, or string CVars.
+It’s also worth noting that these functions also check the settings config to see if there is a value stored, in which case that value is loaded instead of the default value parameter.
+
+You can call these functions anywhere, but Init is the earliest point in Blueprint.
+To actually make your new CVar do something, you’ll need to make your game check the CVar or respond to it in some way.
+
+To check the value you can use the getter functions like this anywhere in your game:
+
+![Image](/images/image13.png)
+
+However in most cases you will want to have your game respond to the CVar and execute something when it changes, such as updating the audio volume.
+
+This can be done by adding callback events which are fired when the CVar changes so that your game can respond to them.
+
+![Image](/images/image17.png)
+
+In this case we’re setting a sound mix’s volume to the value of the CVar whenever it is changed. If **Callback Immediately** is checked, the event will be fired with the current CVar value as soon as the callback is added, making it easier to apply the correct value when the game is launched or an object is constructed.
+
+You can also register and bind a callback for a CVar at the same time, making it easier to organise your Blueprint if the CVar is being used in the same place it is being registered.
+
+![Image](/images/image9.png)
+
+If this is set up correctly, the CVar should be registered, loading it’s value from the config if it is saved, and having some effect on the game when it is changed through the console. The only other thing that needs to be done is adding a menu setting to let the user control it as explained in the **Adding Settings** section.
+
+Check the example project for full implementation of custom CVars to control gameplay elements and audio levels.
