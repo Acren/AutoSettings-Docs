@@ -54,4 +54,4 @@ If the Auto Settings plugin is installed correctly, you’ll find new categories
 
 - **AutoSettings Setting Controls** contains controls (Both native UMG controls and also custom controls) that have been extended to be used in a settings menu. These can be tied to Console Variables to automatically apply when changed, and can save to config to be loaded and applied when the game is launched again.
 
-![Image](/images/image8.png)
+![Image](/images/image8.png "Test title")
