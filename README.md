@@ -53,4 +53,41 @@ If the Auto Settings plugin is installed correctly, you’ll find new categories
 - **AutoSettings Input** contains widgets used for runtime input binding.
 
 - **AutoSettings Setting Controls** contains controls (Both native UMG controls and also custom controls) that have been extended to be used in a settings menu. These can be tied to Console Variables to automatically apply when changed, and can save to config to be loaded and applied when the game is launched again.
+
+Different settings controls with basic styling applied:
 ![Image](/images/image8.png)
+
+## Settings
+
+To add a setting to your menu, place the widget for the desired control type from the **AutoSettings Setting Controls** category anywhere in your menu.
+
+> Tip: It can be nice for layout purposes to wrap settings in a new *Setting Row* widget which consists of label text and a Named Slot to contain the control widget itself (See example project) but you are free to set up the layout of your menu whichever way works best for you.
+
+![Image](/images/image15.png)
+
+All settings have the following editable properties:
+
+- **CVar Name** is the name of the console variable to expose - this can be a built-in Unreal console variable such as a scalability setting or vsync, one declared specifically for your project, or even one declared in another plugin if applicable.
+*See **Console Variables** section.*
+
+- **Value Mask** (optional) is a subclass of the **SettingValueMask** class used to split console variables into multiple independent settings in your menu.
+*See **Value Masks** section.*
+
+- **Auto Apply** - If true, the setting will automatically apply and call the console variable with the new value when the user changes the selection. If false, will need to be done manually with the Apply function.
+
+- **Auto Save** - If checked, the setting will automatically update the config with the new value when the user changes the selection. If false, will need to be done manually with the Save or Cancel functions. Saved settings are stored in the **Settings.ini** config file.
+
+### Select Controls
+
+**Select** controls are controls with multiple named options for the user to select from.
+These include the **ComboBox**, **Radio Select**, and **Spinner**.
+
+![Image](/images/image22.png)
+
+These settings have properties to determine which options they should allow.
+
+- The **Options** property allows options to be predefined at design time, the **Label** being the text that the user sees and the **Value** being the internal value that is set on the console variable when selected. 
+If an option has no Value, it instead defaults to use the index of the option, which is useful when creating settings for scalability variables which take integers.
+
+- The **Options Factory** property (optional) is a subclass of the **SettingOptionFactory** class which can be used to dynamically construct a list of options for the setting by overriding the **ConstructOptions** function. For example, **ResolutionOptionFactory** constructs a list of all fullscreen resolutions that are supported by the system running the game.
+
