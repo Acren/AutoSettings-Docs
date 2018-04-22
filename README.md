@@ -169,17 +169,13 @@ The plugin includes subclasses for splitting r.SetRes into resolution and window
 
 The subclass should override the following two functions:
 
-1. The first is the **Mask Value** function, which determines how to convert the console variable value into a format that the setting cares about.
-
-For example the Mask Value function of ResolutionValueMask would take the input value of *1920x1080wf* and return *1920x1080*.
-WindowModeValue Mask would just return *wf* (short for windowed fullscreen).
-
+1. The first is the **Mask Value** function, which determines how to convert the console variable value into a format that the setting cares about.  
+For example the Mask Value function of ResolutionValueMask would take the input value of *1920x1080wf* and return *1920x1080*.  
+WindowModeValue Mask would just return *wf* (short for windowed fullscreen).  
 ![Image](/images/image2.png)
 
-2. The second function is the **Recombine Values** function, which determines how to integrate the setting value back into the console variable value.
-
-In the case of ResolutionValueMask, this would take the current r.SetRes console value, for example *1920x1080wf*, and substitute in a modified resolution value, such as *2560x1440*, combining them into *2560x1440wf* which would form the new console value.
-
-In the WindowModeValueMask subclass, this would take the *1920x1080wf* console value, and substitute a modified setting value for window mode such as *f* (fullscreen), creating the final console value of *1920x1080f*.
-
+2. The second function is the **Recombine Values** function, which determines how to integrate the setting value back into the console variable value.  
+In the case of ResolutionValueMask, this would take the current r.SetRes console value, for example *1920x1080wf*, and substitute in a modified resolution value, such as *2560x1440*, combining them into *2560x1440wf* which would form the new console value.  
+In the WindowModeValueMask subclass, this would take the *1920x1080wf* console value, and substitute a modified setting value for window mode such as *f* (fullscreen), creating the final console value of *1920x1080f*.  
 ![Image](/images/image19.png)
+
