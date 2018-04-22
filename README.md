@@ -154,3 +154,32 @@ You can also register and bind a callback for a CVar at the same time, making it
 If this is set up correctly, the CVar should be registered, loading it’s value from the config if it is saved, and having some effect on the game when it is changed through the console. The only other thing that needs to be done is adding a menu setting to let the user control it as explained in the **Adding Settings** section.
 
 Check the example project for full implementation of custom CVars to control gameplay elements and audio levels.
+
+### Value Masks
+
+**Value Masks** can be used to split console variables into multiple independent settings in your menu.
+
+Any Auto Settings setting control can optionally use a Value Mask by setting the **Value Mask** property to a subclass of the **SettingValueMask** class that determines how the value of the console variables should be split and recombined.
+
+![Image](/images/image4.png)
+
+Example usage might be splitting the **r.SetRes** console variable - which contains both resolution and window mode in the form of *1920x1080wf* - into two separate settings, one controlling the resolution and the other controlling the window mode.
+
+The plugin includes subclasses for splitting r.SetRes into resolution and window mode called **ResolutionValueMask** and **WindowModeValueMask**, but more subclasses can be created in either c++ or Blueprint to handle other cases.
+
+The subclass should override the following two functions:
+
+1. The first is the **Mask Value** function, which determines how to convert the console variable value into a format that the setting cares about.
+
+For example the Mask Value function of ResolutionValueMask would take the input value of *1920x1080wf* and return *1920x1080*.
+WindowModeValue Mask would just return *wf* (short for windowed fullscreen).
+
+![Image](/images/image2.png)
+
+2. The second function is the **Recombine Values** function, which determines how to integrate the setting value back into the console variable value.
+
+In the case of ResolutionValueMask, this would take the current r.SetRes console value, for example *1920x1080wf*, and substitute in a modified resolution value, such as *2560x1440*, combining them into *2560x1440wf* which would form the new console value.
+
+In the WindowModeValueMask subclass, this would take the *1920x1080wf* console value, and substitute a modified setting value for window mode such as *f* (fullscreen), creating the final console value of *1920x1080f*.
+
+![Image](/images/image19.png)
