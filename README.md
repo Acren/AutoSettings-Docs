@@ -298,4 +298,5 @@ The example project also contains versions of the widgets prefixed with **Styled
 I hope I’ve made this plugin comprehensive enough to support any functionality you might need for your project. That being said, if there are any more features or options that you think could be included in this plugin, please let me know on the [UE Forum thread](https://forums.unrealengine.com/unreal-engine/marketplace/1354733-auto-settings-game-options-and-input-binding-toolkit) or the [Discord](https://discord.gg/EzgeRNB) and I might be able to put it in an update.
 
 Thanks!
-Acren
+
+*Acren / Sam*
