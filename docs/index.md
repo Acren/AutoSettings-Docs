@@ -1,4 +1,4 @@
-# Auto Settings Documentation
+# Overview
 
 **Auto Settings** is a game options and input binding toolkit for **Unreal Engine 4** that supports a range of functionality that is standard in modern PC and console games.
 
@@ -13,7 +13,8 @@ It is designed be as fast and simple as possible to use, building on top of and 
 - Settings and input mappings load, save and apply automatically using Unreal's built in config .ini system, console variable system, and input system
 - UI is modular can can be substituted with your own widgets and styling, preserving the functionality underneath
 
-Settings:
+**Settings:**
+
 - Built on top of Unreal's console variable system
 - Defining a new setting is as simple as placing a new widget in your menu and choosing which console variable it is for
 - Choose from any of the hundreds of built in console variables such as VSync, resolution, window mode, scalability settings, etc - these hook up automatically, no c++ or blueprint nodes are required for engine console variables
@@ -22,7 +23,8 @@ Settings:
 - Multiple ready-to-use widgets such as Radio Select, Slider, ComboBox, Spinner, and CheckBox which can be dragged into your menu, link with the settings automatically, and can be restyled to match your game's theme
 - Ability to make your own widgets that extend the system for more specific cases
 
-Input mapping and binding:
+**Input mapping and binding:**
+
 - Actions and axis can be rebound by players at runtime
 - Built on top of Unreal's input system and will work out of the box with your project - keep defining and using actions and axis like you are used to
 - Adding a new input to your menu is as simple as placing a new widget and choosing which action or axis it is for
@@ -34,7 +36,8 @@ Input mapping and binding:
 - Supports inverting axes
 - Choose whether binding a new key should keep or remove other bindings with the same key
 
-Input key icons:
+**Input key icons:**
+
 - Key icon system for optionally displaying inputs as icons instead of text
 - Easily access icon or text label for an input anywhere in your project so that your UI and prompts always shows the correct inputs
 - Ability to define different icon sets for different platforms or gamepad types such as XBox and PlayStation and switch between them on the fly
@@ -169,12 +172,12 @@ The plugin includes subclasses for splitting r.SetRes into resolution and window
 
 The subclass should override the following two functions:
 
-1. The first is the **Mask Value** function, which determines how to convert the console variable value into a format that the setting cares about.  
+The first is the **Mask Value** function, which determines how to convert the console variable value into a format that the setting cares about.  
 For example the Mask Value function of ResolutionValueMask would take the input value of *1920x1080wf* and return *1920x1080*.  
 WindowModeValue Mask would just return *wf* (short for windowed fullscreen).  
 ![Image](/images/image2.png)
 
-2. The second function is the **Recombine Values** function, which determines how to integrate the setting value back into the console variable value.  
+The second function is the **Recombine Values** function, which determines how to integrate the setting value back into the console variable value.  
 In the case of ResolutionValueMask, this would take the current r.SetRes console value, for example *1920x1080wf*, and substitute in a modified resolution value, such as *2560x1440*, combining them into *2560x1440wf* which would form the new console value.  
 In the WindowModeValueMask subclass, this would take the *1920x1080wf* console value, and substitute a modified setting value for window mode such as *f* (fullscreen), creating the final console value of *1920x1080f*.  
 ![Image](/images/image19.png)
@@ -245,31 +248,39 @@ The input binding functionality of the plugin can be globally configured in the 
 ![Image](/images/image18.png)
 
 **Allow Multiple Bindings Per Key**
+
 If true, users can bind the same key or combination to multiple actions or axes at the same time. If false, old mappings will be unbound by new ones.
 
 **Allow Modifier Keys**
+
 If true, users can use the modifier keys (Shift, Ctrl, Alt, Cmd) to create key combinations for action mappings. The modifier Override Text can be used to change how the labels for modifier keys appear if you want it to display “Shift” instead of “Left Shift”.
 
 **Input Presets**
+
 Preset input configurations for your project can be configured here. If empty, the mappings from the project’s **Input** page will be used.
 See **Input Presets** section.
 
 **Key Icon Sets**
+
 Specify sets of key icons here.
 See **Key Icons** section.
 
 **Key Groups**
+
 Any number of keys can be added to a key group so that they can be handled separately from other keys. You can specify allowed key groups on **Action Mapping** and **Axis Mapping** widgets to filter which keys can be bound to them. This might be useful if you want a column in your menu for keyboard controls, and another for gamepad controls, and want to allow both to be used interchangeably.
 Players can also have a Key Group set on them to dynamically determine which key is chosen to display for a prompt label when no Key Group is set on the label widget. Set this by calling **Set Player Key Group** in Blueprint, or **UInputMappingManager::SetPlayerKeyGroupStatic** in code.
 See example project for usage.
 
 **Allowed Keys**
+
 Whitelisted keys that the user is allowed to bind. If empty, all keys are allowed.
 
 **Disallowed Keys**
+
 Blacklisted keys that the user is not allowed to bind. Takes precedence over allowed keys.
 
 **Axis Associations**
+
 These are used to tell the system to associate keys with axes when capturing keys that the user is binding to an Axis.
 This is useful for analog inputs such as gamepad thumbsticks where you might want the character to move half as fast when the thumbstick is pressed halfway.
 
