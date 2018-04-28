@@ -1,1 +1,10 @@
 site_name: AutoSettings Docs
+pages:
+    - Home: index.md
+    - UMG Widgets: umg-widgets.md
+    - Settings: settings.md
+    - Input Binding: input-binding.md
+    - Styling: styling.md
+    - Common Issues & FAQ: faq.md
+    - Support: support.md
+theme: readthedocs
