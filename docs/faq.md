@@ -6,8 +6,7 @@ This should allow standalone mode to save config and thus your settings will be 
 
 ***Can I use the menu from the example project? How do I integrate it with my project?***
 
-You can. Open the example project for the version of the plugin that your project is using, right click and Migrate the **SettingsUI** widget to your project. This will also copy all of the styled widgets that are used. You should then place the SettingsUI widget in your existing menu or add a way to open it. (See the **DemoPlayerController** Blueprint in the Example Project)
-You should also be aware that project settings won't be copied with the menu assets, so it's worth comparing the **AutoSettings** page with your own.
+You can. See the [example project page.](/example-project/#migrating-assets-from-the-example-project)
 
 ***Does the example project have gamepad navigation?***
 
