@@ -7,6 +7,13 @@ For support, bug reports, feature requests, etc, you can contact me on any of th
 - [Twitter](https://twitter.com/itsAcren)
 - [Email](mailto:acren.marketplace@gmail.com)
 
+If you do have a bug, crash, or any other issue please let me know the following:
+
+- The engine version
+- The plugin version
+- Does the example project work?
+- If crashing, the .log file or pasted crash report
+
 Thanks!
 
 *Acren / Sam*
