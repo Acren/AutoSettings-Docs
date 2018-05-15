@@ -11,3 +11,7 @@ You can. See the [example project page.](/example-project/#migrating-assets-from
 ***Does the example project have gamepad navigation?***
 
 Not yet. I'd like to do this eventually, but haven't had time yet.
+
+***The example project has empty values for the scalability settings, why?***
+
+The value falls back to the index of the array if empty. Makes it a bit faster to create scalability settings as they use 0 for low, 1 for medium, etc.
