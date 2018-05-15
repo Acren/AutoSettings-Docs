@@ -16,7 +16,7 @@ Plugin | Engine | Example Project
 1.1    | 4.17   | 1.1
 1.0    | 4.17   | 1.0
 
-# Changelists
+# Release Notes
 
 ## 1.2.4
 
