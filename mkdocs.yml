@@ -6,6 +6,7 @@ pages:
     - Input Binding: input-binding.md
     - Styling: styling.md
     - Example Project: example-project.md
+    - Versions: versions.md
     - Common Issues & FAQ: faq.md
     - Support: support.md
 theme: readthedocs
