@@ -15,4 +15,23 @@ If you so wish, you can migrate assets or the entire menu from the example proje
 2. Right click and Migrate the **SettingsUI** widget to your project. This will also copy all of the styled widgets that are used.
 3. You should then place the SettingsUI widget in your existing menu or add a way to open it. (See the **DemoPlayerController** Blueprint in the Example Project)
 
+Any implementations of project-specific custom settings that you want to use should also be implemented in or copied to your own project as the CVars are not included in the engine by default.
+These are all implemented in the Example Project for demonstration purposes and are not required to use the plugin, they are fully optional.
+
+In the example project the following setting CVars are custom:
+
+Registered and implemented in DemoGameInstance:
+
+- Game.IconSet
+- GameAudio.MusicVolume
+- GameAudio.SFXVolume
+
+Registered in DemoGameInstance and implemented in DemoCharacter:
+
+- Camera.FOV
+- Character.GravityScale
+- Character.WalkSpeed
+
+[View documentation about registering and implementing custom CVars here](/settings/#console-variables)
+
 Also be aware that project settings won't be copied with the menu assets, so it's worth comparing the **AutoSettings** configuration page with your own.
