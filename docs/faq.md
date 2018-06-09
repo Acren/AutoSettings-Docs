@@ -12,6 +12,10 @@ You can. See the [example project page.](/example-project/#migrating-assets-from
 
 Not yet. I'd like to do this eventually, but haven't had time yet.
 
-***The example project has empty values for the scalability settings, why?***
+***Why does the example project have empty values for the scalability settings, is this okay?***
 
-The value falls back to the index of the array if empty. Makes it a bit faster to create scalability settings as they use 0 for low, 1 for medium, etc.
+The value falls back to the index of the array if empty, which makes it a bit faster to create scalability settings as they use 0 for low, 1 for medium, etc.
+
+***Where do settings get saved?***
+
+Settings are saved to `<Project or package>\Saved\Config\<Platform>\Settings.ini` in the `[Settings]` section. Input bindings are saved in `Input.ini` in the `[/Script/AutoSettings.InputMappingManager]` section.
