@@ -20,7 +20,7 @@ Plugin | Engine | Example Project
 
 ## 1.2.4
 
-- ComboBox setting now chooses not to apply or saving settings when the selection is changed externally - this fixes a crash that could happen when constructing new widgets
+- ComboBox setting now chooses not to apply or save settings when the selection is changed externally - this fixes a crash that could happen when constructing new widgets
 - Fixed a crash when external code tries to register CVar change callback delegates that are already registered - warn instead
 
 ## 1.2.3
