@@ -1,6 +1,6 @@
 site_name: AutoSettings Docs
 pages:
-    - Home: index.md
+    - Introduction: index.md
     - Installation: installation.md
     - UMG Widgets: umg-widgets.md
     - Settings: settings.md
