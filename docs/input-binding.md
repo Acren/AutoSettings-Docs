@@ -8,7 +8,7 @@ Action mappings have an **Action Name** for the action to expose - for example *
 
 Axis mappings have an **Axis Name** and a **Scale**. If you have an axis configuration for *MoveForward* for which the *W* key has a scale of *1* and the *S* key has a scale of *-1*, you likely want to add two Axis Mapping widgets - one for *MoveForward 1*, and one for *MoveForward -1*. 
 
-Mappings are stored per-player in the **Input.ini** configuration file.
+Mappings are stored per-player in `<Project or package>\Saved\Config\<Platform>\Input.ini` in the `[/Script/AutoSettings.InputMappingManager]` section.
 
 ![Image](/images/image6.png)
 
