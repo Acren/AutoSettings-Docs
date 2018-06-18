@@ -7,6 +7,6 @@ Installation is typical for an Unreal plugin:
 
 At this point the plugin should be enabled in your project and ready for you to use.
 
-If you want to use assets from the example project, [read how to migrate them here](/example-project).
+If you want to use the menu or assets from the example project, [read how to migrate them here](/example-project).
 
-At this point, you can move on to using the [UMG Widgets](/umg-widgets) to add [settings](/settings) and [input bindings](/input-binding) to your project.
+Or, you can move on to using the [UMG Widgets](/umg-widgets) to add [settings](/settings) and [input bindings](/input-binding) to your own menu.
