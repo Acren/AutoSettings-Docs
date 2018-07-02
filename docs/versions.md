@@ -7,6 +7,7 @@ The example project does not always need to match, but it is recommended to use 
 
 Plugin | Engine | Example Project
 ------ | ------ | ------------
+1.3    | 4.19   | 1.3
 1.2.4  | 4.19   | 1.2.2
 1.2.3  | 4.19   | 1.2.2
 1.2.2  | 4.19   | 1.2.2
@@ -17,6 +18,34 @@ Plugin | Engine | Example Project
 1.0    | 4.17   | 1.0
 
 # Release Notes
+
+## 1.3
+
+New:
+
+- Added option to disable automatic player input initialization in plugin settings and call it manually using `InitializePlayerInputOverrides`.
+- Added the ability for projects to override how the plugin uniquely identifies players for storing inputs by implementing the AutoSettingsPlayer interface on PlayerController - by default it still uses the Controller ID of the local player.
+- Slider setting no longer auto-saves every delta while the handle is being dragged, which was performance heavy as it was writing to config each time. Now it can still auto-apply while the handle is being dragged, but only auto-saves once the handle is released.
+- Added option to control sensitivity of mouse-axis binding, specifying how far the mouse must move before it is registered.
+- Added the ability to manually add input overrides using `AddPlayerActionOverride` and `AddPlayerAxisOverride`.
+- Added the option for projects to specify special escape keys that cancel input binding without capturing anything.
+- Added `HasUnappliedChange` to settings. Previously you could only check `HasUnsavedChange`.
+- Saving a setting automatically applies it if it hasn't been already. This removes the possibile state of having saved but unapplied changes.
+
+Fixed:
+
+- Setting widgets now read their initial value from their applied console variable if available instead of saved config. This fixes the unintended behaviour of settings showing the saved value instead of the applied value where the two differ.
+- Fixed a bug with input binding where left mouse button would register as none / invalid if pressed within a second or so of the prompt opening.
+- Fixed bug with some saved settings such as max FPS being overridden by engine initialization. Saved setting values are now applied after engine initialization so that they take precedence over engine values.
+- Fixed Cancel reverting the setting to the applied value. It now reverts to the saved value instead.
+- Fixed issues while saving settings with masked values (e.g. Resolution / window mode) recombining with applied values instead of saved values.
+- Fixed settings with unapplied changes being incorrectly reverted when any console variable is changed, including other settings
+
+Example project:
+
+- Split each page of settings into their own widgets, making them easier to manage.
+- Added UI to video settings page to demonstrate manual save / apply / cancel functionality.
+- Added gamma setting to video settings.
 
 ## 1.2.4
 
@@ -39,7 +68,7 @@ Plugin | Engine | Example Project
 
 ## 1.2
 
-Plugin:
+New:
 
 - Added the ability to dynamically prioritize between different Key Groups for action and axis labels. Set this by calling "Set Player Key Group", or "UInputMappingManager::SetPlayerKeyGroupStatic" in code. Example usage for this would be automatically switching input prompts between gamepad and keyboard & mouse when the player changes input mode.
 - To support dynamic Key Group priorities, an empty tag for Key Group now represents "any" rather than the keys that are not used by any other key group. Projects with a gamepad key group will now also probably want a key group for keyboard and mouse. The keys used for prompts using an empty/any key group will be dynamically selected based on the player's Key Group.
@@ -48,8 +77,12 @@ Plugin:
 - Added the ability to bind mouse axes so that users can re-bind "look" inputs. Mouse axes can be blacklisted to revert to old behavior.
 - All BindWidget properties are now read-exposed to Blueprint. This means you can now access the internal control of a setting without needing to use code.
 - Exposed "Is CVar Registered" function to Blueprint.
+
+Fixed:
+
 - Fixed error logs caused by ActionLabel trying to create widgets at design time.
 - Fixed warning logs caused by trying to register a setting for a CVar that already exists when the game is run past the first time in an editor session.
+- Converted plugin to IWYU to decrease compile times
 
 Example project:
 
@@ -58,13 +91,6 @@ Example project:
 - Added more mappings to the "Alternate" preset.
 - Gamepad Right Stick Up and Down are now mapped to axis scales -1 and 1 respectively instead of 1 and -1. This is because the right stick Y axis has the opposite values of the left stick and I didn't realise when initially setting it up.
 - Added video setting for Max FPS.
-
-Code/internal:
-
-- Converted plugin to IWYU.
-- Fix shadowing in AxisLabel.cpp.
-- Fix a typo in ActionLabel.
-- Made getter functions const.
 
 ## 1.1.1
 
