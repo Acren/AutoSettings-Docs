@@ -7,6 +7,7 @@ The example project does not always need to match, but it is recommended to use 
 
 Plugin | Engine | Example Project
 ------ | ------ | ------------
+1.4    | 4.20   | 1.4
 1.3    | 4.19   | 1.3
 1.2.4  | 4.19   | 1.2.2
 1.2.3  | 4.19   | 1.2.2
@@ -18,6 +19,13 @@ Plugin | Engine | Example Project
 1.0    | 4.17   | 1.0
 
 # Release Notes
+
+## 1.4
+
+- UE 4.20 now supported
+- Plugin developer config (AutoSettings page in Project Settings) converted to use *Game* category instead of *EditorPerProjectUserSettings* category
+
+**Important note:** Because of the config category change, projects upgrading from older versions of the plugin will have to move or copy the `[/Script/AutoSettings.AutoSettingsConfig]` category, including all of its entries, from `YourProject/Config/DefaultEditorPerProjectUserSettings.ini` to `YourProject/Config/DefaultGame.ini` to retain existing config values.
 
 ## 1.3
 
