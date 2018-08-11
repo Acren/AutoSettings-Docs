@@ -11,9 +11,12 @@ For example if you had plugin version *1.2.1*, there is no example project with 
 
 If you so wish, you can migrate assets or the entire menu from the example project to your own.
 
-1. Open the example project for the version of the plugin that your project is using
-2. Right click and Migrate the **SettingsUI** widget to your project. This will also copy all of the styled widgets that are used.
-3. You should then place the SettingsUI widget in your existing menu or add a way to open it. (See the **DemoPlayerController** Blueprint in the Example Project)
+1. With your own project closed, copy the `[/Script/AutoSettings.AutoSettingsConfig]` category, including all of its entries, in **Config/DefaultGame.ini** from the example project to your own.
+2. Also copy tag definitions in **Config/DefaultGameplayTags.ini** to your own project.
+3. In the example project, right click and Migrate the **SettingsUI** widget to your project. This will also copy all of the styled widgets that are used.
+4. Also migrate the **ButtonIcons** directory if you want to use the icons from the example project.
+5. Open your project and ensure the AutoSettings plugin is enabled
+6. Place the SettingsUI widget in your existing menu or add a way to open it. (See the **DemoPlayerController** Blueprint in the Example Project)
 
 Any implementations of project-specific custom settings that you want to use should also be implemented in or copied to your own project as the CVars are not included in the engine by default.
 These are all implemented in the Example Project for demonstration purposes and are not required to use the plugin, they are fully optional.
@@ -33,5 +36,3 @@ Registered in DemoGameInstance and implemented in DemoCharacter:
 - Character.WalkSpeed
 
 [View documentation about registering and implementing custom CVars here](/settings/#console-variables)
-
-Also be aware that project settings won't be copied with the menu assets, so it's worth comparing the **AutoSettings** configuration page with your own.
