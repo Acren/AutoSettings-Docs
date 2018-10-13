@@ -13,7 +13,9 @@ If you so wish, you can migrate assets or the entire menu from the example proje
 
 [The entire process is shown in this video](https://www.youtube.com/watch?v=eL02UKsATZ4)
 
-1. With your own project closed, copy the `[/Script/AutoSettings.AutoSettingsConfig]` category, including all of its entries, in **Config/DefaultGame.ini** from the example project to your own.
+1. With your own project closed, copy the `[/Script/AutoSettings.AutoSettingsConfig]` category in the following config file, including all of its entries, from the example project to your own.
+	- If UE 4.20 or later: **Config/DefaultGame.ini**
+	- If UE 4.19 or earlier: **Config/DefaultEditorPerProjectUserSettings.ini**
 2. Also copy tag definitions in **Config/DefaultGameplayTags.ini** to your own project.
 3. In the example project, right click and Migrate the **SettingsUI** widget to your project. This will also copy all of the styled widgets that are used.
 4. Also migrate the **ButtonIcons** directory if you want to use the icons from the example project.
