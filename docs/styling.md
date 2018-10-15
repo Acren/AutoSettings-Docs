@@ -9,4 +9,5 @@ This new class would be a child of the c++ class it needs to get its functionali
 
 You can also copy and paste the Default version from the plugin into your project and modify that, which would accomplish similar results.
 
-The example project also contains versions of the widgets prefixed with **Styled**, which go a little bit further as an example of making them look nicer.
+The example project also contains versions of the widgets prefixed with **Styled**, which go a little bit further as an example of making them look nicer. If you have migrated the menu from the example project, you can modify these in your own project instead of creating new ones.
+
