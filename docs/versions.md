@@ -7,6 +7,7 @@ The example project does not always need to match, but it is recommended to use 
 
 Plugin | Engine | Example Project
 ------ | ------ | ------------
+1.4.1  | 4.20   | 1.4.0.1
 1.4    | 4.20   | 1.4.0.1
 1.3    | 4.19   | 1.3
 1.2.4  | 4.19   | 1.2.2
@@ -19,6 +20,10 @@ Plugin | Engine | Example Project
 1.0    | 4.17   | 1.0
 
 # Release Notes
+
+## 1.4.1
+
+- Properly exposed Apply Setting and Save Setting functions to Blueprint. These were intended to be exposed in a previous version but not correctly set up as static Blueprint-callable functions.
 
 ## 1.4
 
