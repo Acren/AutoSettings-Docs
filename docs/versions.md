@@ -7,6 +7,8 @@ The example project does not always need to match, but it is recommended to use 
 
 Plugin | Engine | Example Project
 ------ | ------ | ------------
+1.5.1  | 4.21   | 1.5.1
+1.5    | 4.20   | 1.5
 1.4.1  | 4.20   | 1.4.0.1
 1.4    | 4.20   | 1.4.0.1
 1.3    | 4.19   | 1.3
@@ -20,6 +22,33 @@ Plugin | Engine | Example Project
 1.0    | 4.17   | 1.0
 
 # Release Notes
+
+## 1.5.1
+
+- UE 4.21 now supported
+
+## 1.5
+
+New:
+
+- PlayerControllers can determine which input preset they should use by default via IAutoSettingsPlayer interface
+- PlayerControllers can determine how to save and load input mappings via IAutoSettingsPlayer interface
+This is useful if you need to store saved mappings yourself instead of using the default config implementation
+- Added a OnPressed capture mode to BindCapturePrompt which makes it possible to capture input on key down rather than key up, if you are not using modifier keys
+- BindCapturePrompt can be restricted to only accept input from a Key Group, rejecting other input and staying open
+- Added BlacklistedActions and BlacklistedAxes to Auto Settings config, allowing input mappings to be ignored by the system
+- Exposed some more properties of various widgets with BlueprintReadWrite and BlueprintReadOnly
+- Added "Update" functions to some widget types that is called when properties change at runtime, which can be used for responding to data changes as an alternative to UMG's data binding 
+- InputMapping (ActionMapping and AxisMapping) can now be passed a chord from an external source to bind it to an action or axis
+- Added OnChordRejected and OnCapturePromptClosed delegates to BindCapturePrompt
+- Added bIgnoreGameViewportInputWhileCapturing property to BindCapturePrompt to control if the prompt should block input from the game viewport
+
+Editor:
+
+- ActionLabel and AxisLabel will now preview the default input preset in the editor
+(i.e if an ActionLabel is for Jump, it would show Spacebar if that's the default mapping)
+This requires the KeyLabel you are using to implement UpdateKeyLabel
+- Added TitleProperty meta tag to many config arrays allowing the contents to be viewed more easily while editing Auto Settings config in project settings
 
 ## 1.4.1
 
