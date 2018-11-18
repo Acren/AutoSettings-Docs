@@ -46,7 +46,7 @@ This is useful if you need to store saved mappings yourself instead of using the
 Editor:
 
 - ActionLabel and AxisLabel will now preview the default input preset in the editor
-(i.e if an ActionLabel is for Jump, it would show Spacebar if that's the default mapping)
+(e.g. if an ActionLabel is for Jump, it would show Spacebar if that's the default mapping)
 This requires the KeyLabel you are using to implement UpdateKeyLabel
 - Added TitleProperty meta tag to many config arrays allowing the contents to be viewed more easily while editing Auto Settings config in project settings
 
