@@ -5,27 +5,37 @@ Each plugin version is released to support the latest engine version only.
 New example project versions are sometimes released with plugin versions where applicable.
 The example project does not always need to match, but it is recommended to use the most recent example project at the time that plugin version was released.
 
-Plugin | Engine | Example Project
------- | ------ | ------------
-1.5.1  | 4.21   | 1.5.1
-1.5    | 4.20   | 1.5
-1.4.1  | 4.20   | 1.4.0.1
-1.4    | 4.20   | 1.4.0.1
-1.3    | 4.19   | 1.3
-1.2.4  | 4.19   | 1.2.2
-1.2.3  | 4.19   | 1.2.2
-1.2.2  | 4.19   | 1.2.2
-1.2.1  | 4.18   | 1.2
-1.2    | 4.18   | 1.2
-1.1.1  | 4.18   | 1.1.1
-1.1    | 4.17   | 1.1
-1.0    | 4.17   | 1.0
+Plugin  | Engine | Example Project
+------  | ------ | ------------
+1.5.2   | 4.21   | 1.5.1
+1.5.1   | 4.21   | 1.5.1
+1.5.0.1 | 4.20   | 1.5
+1.5     | 4.20   | 1.5
+1.4.1   | 4.20   | 1.4.0.1
+1.4     | 4.20   | 1.4.0.1
+1.3     | 4.19   | 1.3
+1.2.4   | 4.19   | 1.2.2
+1.2.3   | 4.19   | 1.2.2
+1.2.2   | 4.19   | 1.2.2
+1.2.1   | 4.18   | 1.2
+1.2     | 4.18   | 1.2
+1.1.1   | 4.18   | 1.1.1
+1.1     | 4.17   | 1.1
+1.0     | 4.17   | 1.0
 
 # Release Notes
+
+## 1.5.2
+
+- Fix Blueprint Category issue causing package to fail (UE 4.21)
 
 ## 1.5.1
 
 - UE 4.21 now supported
+
+## 1.5.0.1
+
+- Fix Blueprint Category issue causing package to fail (UE 4.20)
 
 ## 1.5
 
