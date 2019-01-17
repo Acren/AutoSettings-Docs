@@ -1,12 +1,14 @@
 # Compatibility
 
-Each plugin version is released to support the latest engine version only.
+Each plugin version is (usually) released to support the latest engine version only.
 
 New example project versions are sometimes released with plugin versions where applicable.
 The example project does not always need to match, but it is recommended to use the most recent example project at the time that plugin version was released.
 
 Plugin  | Engine | Example Project
-------  | ------ | ------------
+------- | ------ | ------------
+1.5.4   | 4.21   | 1.5.1
+1.5.3   | 4.21   | 1.5.1
 1.5.2   | 4.21   | 1.5.1
 1.5.1   | 4.21   | 1.5.1
 1.5.0.1 | 4.20   | 1.5
@@ -25,9 +27,17 @@ Plugin  | Engine | Example Project
 
 # Release Notes
 
+## 1.5.4
+
+- Fixed SetPlayerKeyGroup (for dynamic icon display based on input device) not working
+
+## 1.5.3
+
+- Fixed crash in some projects due to KeyLabel binding a delegate that is already bound
+
 ## 1.5.2
 
-- Fix Blueprint Category issue causing package to fail (UE 4.21)
+- Fixed Blueprint Category issue causing package to fail (UE 4.21)
 
 ## 1.5.1
 
@@ -35,7 +45,7 @@ Plugin  | Engine | Example Project
 
 ## 1.5.0.1
 
-- Fix Blueprint Category issue causing package to fail (UE 4.20)
+- Fixed Blueprint Category issue causing package to fail (UE 4.20)
 
 ## 1.5
 
