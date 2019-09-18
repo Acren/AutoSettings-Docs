@@ -7,6 +7,7 @@ The example project does not always need to match, but it is recommended to use 
 
 Plugin  | Engine | Example Project
 ------- | ------ | ------------
+1.7     | 4.23   | 1.7
 1.6     | 4.22   | 1.6
 1.5.4   | 4.21   | 1.5.1
 1.5.3   | 4.21   | 1.5.1
@@ -27,6 +28,10 @@ Plugin  | Engine | Example Project
 1.0     | 4.17   | 1.0
 
 # Release Notes
+
+## 1.7
+
+- UE 4.23 now supported
 
 ## 1.6
 
