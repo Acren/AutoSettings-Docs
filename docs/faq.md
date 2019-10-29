@@ -18,4 +18,12 @@ The value falls back to the index of the array if empty, which makes it a bit fa
 
 ***Where do settings get saved?***
 
-Settings are saved to `<Project or package>\Saved\Config\<Platform>\Settings.ini` in the `[Settings]` section. Input bindings are saved in `Input.ini` in the `[/Script/AutoSettings.InputMappingManager]` section.
+Settings are saved to the `Settings.ini` config file in the `[Settings]` section. Input bindings are saved in `Input.ini` in the `[/Script/AutoSettings.InputMappingManager]` section.
+
+Unreal saves config files to different directories depending on the configuration:
+
+Context                       | Config directory
+----------------------------- | ------------------
+Editor:                       |**`<Project directory>\Saved\Config\<Platform>`**
+Development and Debug builds: |**`<Package directory>\Saved\Config\<Platform>`**
+Shipping builds:              |**`AppData\Local\<Project name>\Saved\Config\<Platform>`**
