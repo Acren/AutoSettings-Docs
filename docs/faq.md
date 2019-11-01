@@ -27,3 +27,8 @@ Context                       | Config directory
 Editor:                       |**`<Project directory>\Saved\Config\<Platform>`**
 Development and Debug builds: |**`<Package directory>\Saved\Config\<Platform>`**
 Shipping builds:              |**`AppData\Local\<Project name>\Saved\Config\<Platform>`**
+
+***Does this work on Linux?***
+
+Linux isn't officially supported or tested as a target platform, but everything in the plugin works across platforms and in fact multiple users have confirmed full compatibility.
+To allow the plugin to compile on Linux, you need to add Linux to the WhitelistPlatforms in the `AutoSettings.uplugin` file.
