@@ -8,7 +8,7 @@ It is designed be as fast and simple as possible to use, building on top of and 
 
 # Current Features
 
-- Using this plugin to create settings and input binding menus requires no c++ and even no blueprint nodes, simply add the plugin to your project and start placing setting widgets in your UMG menus
+- Using this plugin to create settings and input binding menus requires no C++ and even no blueprint nodes, simply add the plugin to your project and start placing setting widgets in your UMG menus
 - Example menu with common settings that you can copy to your own project if you choose
 - Settings and input mappings load, save and apply automatically using Unreal's built in config .ini system, console variable system, and input system
 - UI is modular can can be substituted with your own widgets and styling, preserving the functionality underneath
@@ -17,8 +17,8 @@ It is designed be as fast and simple as possible to use, building on top of and 
 
 - Built on top of Unreal's console variable system
 - Defining a new setting is as simple as placing a new widget in your menu and choosing which console variable it is for
-- Choose from any of the hundreds of built in console variables such as VSync, resolution, window mode, scalability settings, etc - these hook up automatically, no c++ or blueprint nodes are required for engine console variables
-- Ability to define new console variables, access their values, and bind events that are called when they change, in c++ or in blueprint - so that you can create any additional settings you need that Unreal doesn't have by default
+- Choose from any of the hundreds of built in console variables such as VSync, resolution, window mode, scalability settings, etc - these hook up automatically, no C++ or blueprint nodes are required for engine console variables
+- Ability to define new console variables, access their values, and bind events that are called when they change, in C++ or in blueprint - so that you can create any additional settings you need that Unreal doesn't have by default
 - Choose whether settings should automatically save when they are changed, or allow the user to manually apply, save, or cancel changes
 - Multiple ready-to-use widgets such as Radio Select, Slider, ComboBox, Spinner, and CheckBox which can be dragged into your menu, link with the settings automatically, and can be restyled to match your game's theme
 - Ability to make your own widgets that extend the system for more specific cases

@@ -60,11 +60,11 @@ There are a few components to doing this:
 2. Using the CVar to control something in the game
 3. Adding a setting for the CVar (already covered)
 
-Registering and using CVars in c++ is covered in Epic’s documentation [here](https://docs.unrealengine.com/latest/INT/Programming/Development/Tools/ConsoleManager/index.html).
+Registering and using CVars in C++ is covered in Epic’s documentation [here](https://docs.unrealengine.com/latest/INT/Programming/Development/Tools/ConsoleManager/index.html).
 
 There are also functions in this plugin to expose this to Blueprint, so I’ll outline them here.
 
-Registering CVars is best done as early as possible, so unless you can use c++ I would suggest doing it in your GameInstance class in the **Init** event.
+Registering CVars is best done as early as possible, so unless you can use C++ I would suggest doing it in your GameInstance class in the **Init** event.
 
 ![Image](/images/image10.png)
 
@@ -96,7 +96,7 @@ Check the example project for full implementation of custom CVars to control gam
 
 # Default Values
 
-When registering a new CVar in either c++ or Blueprint, you are given the option to specify a default value.
+When registering a new CVar in either C++ or Blueprint, you are given the option to specify a default value.
 
 This is useful when you are defining new CVars that are not built into the engine already, but you may find yourself with the need to change the default value of an existing CVar.
 
@@ -119,7 +119,7 @@ Any Auto Settings setting control can optionally use a Value Mask by setting the
 
 Example usage might be splitting the **r.SetRes** console variable - which contains both resolution and window mode in the form of *1920x1080wf* - into two separate settings, one controlling the resolution and the other controlling the window mode.
 
-The plugin includes subclasses for splitting r.SetRes into resolution and window mode called **ResolutionValueMask** and **WindowModeValueMask**, but more subclasses can be created in either c++ or Blueprint to handle other cases.
+The plugin includes subclasses for splitting r.SetRes into resolution and window mode called **ResolutionValueMask** and **WindowModeValueMask**, but more subclasses can be created in either C++ or Blueprint to handle other cases.
 
 The subclass should override the following two functions:
 
