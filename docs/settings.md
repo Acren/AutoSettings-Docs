@@ -94,6 +94,21 @@ If this is set up correctly, the CVar should be registered, loading it’s value
 
 Check the example project for full implementation of custom CVars to control gameplay elements and audio levels.
 
+# Default Values
+
+When registering a new CVar in either c++ or Blueprint, you are given the option to specify a default value.
+
+This is useful when you are defining new CVars that are not built into the engine already, but you may find yourself with the need to change the default value of an existing CVar.
+
+One way to do this in Unreal Engine, even without Auto Settings, is to use the `SystemSettings` category in the `DefaultEngine.ini` config file, like so:
+
+```
+[SystemSettings]
+r.MyCvar = 2
+```
+
+If specified, the value in the file will apply when the engine is initialized, which will then be overriden by user's saved value if it has been changed.
+
 # Value Masks
 
 **Value Masks** can be used to split console variables into multiple independent settings in your menu.
