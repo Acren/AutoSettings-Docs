@@ -7,6 +7,7 @@ The example project does not always need to match, but it is recommended to use 
 
 Plugin  | Engine | Example Project
 ------- | ------ | ------------
+1.8     | 4.24   | 1.8
 1.7.1   | 4.23   | 1.7
 1.7     | 4.23   | 1.7
 1.6     | 4.22   | 1.6
@@ -30,9 +31,28 @@ Plugin  | Engine | Example Project
 
 # Release Notes
 
+## 1.8
+
+New:
+
+- UE 4.24 now supported
+- Added helper functions to support usage of CVars as booleans, which are actually just integers with the value 0 or 1 under the hood
+- Added a property to BindCaptureButton to control the Z-order of the propmt it creates, without having to override InitializePrompt
+
+Fixed:
+
+- Fixed a crash when trying to add a change callback for CVar that doesn't exist
+- Fixed player's input mapping set being treated as customized even after resetting it to a default preset
+
+Example project:
+
+- Added Sensitivity setting to the example project, which controls both mouse and analog stick sensitivity
+
+**Note:** There appears to be a bug in Unreal 4.24.0 which prevents plugins loading from the Project/Plugins directory in packaged builds if the project is Blueprint-only. This is not a problem with Auto Settings specifically, but consider installing the plugin to the engine or adding source to your project if you are running into this issue.
+
 ## 1.7.1
 
-- Set plugin LoadingPhase to PreDefault, fixing a bug occurring in some projects that was causing Blueprints that were referencing the plugin to break when the engine was loaded
+- Plugin LoadingPhase changed to PreDefault, fixing a bug occurring in some projects that was causing Blueprints that were referencing the plugin to break when the engine was loaded
 
 ## 1.7
 
