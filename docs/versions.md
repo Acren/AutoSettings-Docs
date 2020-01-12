@@ -37,7 +37,7 @@ New:
 
 - UE 4.24 now supported
 - Added helper functions to support usage of CVars as booleans, which are actually just integers with the value 0 or 1 under the hood
-- Added a property to BindCaptureButton to control the Z-order of the propmt it creates, without having to override InitializePrompt
+- Added a property to BindCaptureButton to control the Z-order of the prompt it creates, without having to override InitializePrompt
 
 Fixed:
 
@@ -127,11 +127,11 @@ New:
 - Added the ability to manually add input overrides using `AddPlayerActionOverride` and `AddPlayerAxisOverride`.
 - Added the option for projects to specify special escape keys that cancel input binding without capturing anything.
 - Added `HasUnappliedChange` to settings. Previously you could only check `HasUnsavedChange`.
-- Saving a setting automatically applies it if it hasn't been already. This removes the possibile state of having saved but unapplied changes.
+- Saving a setting automatically applies it if it hasn't been already. This removes the possible state of having saved but unapplied changes.
 
 Fixed:
 
-- Setting widgets now read their initial value from their applied console variable if available instead of saved config. This fixes the unintended behaviour of settings showing the saved value instead of the applied value where the two differ.
+- Setting widgets now read their initial value from their applied console variable if available instead of saved config. This fixes the unintended behavior of settings showing the saved value instead of the applied value where the two differ.
 - Fixed a bug with input binding where left mouse button would register as none / invalid if pressed within a second or so of the prompt opening.
 - Fixed bug with some saved settings such as max FPS being overridden by engine initialization. Saved setting values are now applied after engine initialization so that they take precedence over engine values.
 - Fixed Cancel reverting the setting to the applied value. It now reverts to the saved value instead.

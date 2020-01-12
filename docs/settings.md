@@ -107,7 +107,7 @@ One way to do this in Unreal Engine, even without Auto Settings, is to use the `
 r.MyCvar = 2
 ```
 
-If specified, the value in the file will apply when the engine is initialized, which will then be overriden by user's saved value if it has been changed.
+If specified, the value in the file will apply when the engine is initialized, which will then be overridden by user's saved value if it has been changed.
 
 # Value Masks
 
