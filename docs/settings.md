@@ -56,6 +56,7 @@ For a full list, check **Help > Console Variables** in the editor.
 There are cases in which you might want to expose something as a setting that isn’t built into Unreal by default, for example audio levels.
 
 There are a few components to doing this:
+
 1. Registering the CVar
 2. Using the CVar to control something in the game
 3. Adding a setting for the CVar (already covered)
