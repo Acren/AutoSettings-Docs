@@ -28,7 +28,18 @@ Editor:                       |**`<Project directory>\Saved\Config\<Platform>`**
 Development and Debug builds: |**`<Package directory>\Saved\Config\<Platform>`**
 Shipping builds:              |**`AppData\Local\<Project name>\Saved\Config\<Platform>`**
 
+***Why do inputs not update in game when I change them in the project settings?***
+
+This usually means the inputs have been modified in-game and so the defaults are not being used anymore.
+This can be fixed by resetting the player's in-game inputs to the default with the Set Player Input Preset or Set Player Input Preset By Tag nodes. If you are using the menu from the example project, there is already a preset switcher for this.
+Alternatively, deleting the `[/Script/AutoSettings.InputMappingManager]` section from the `Input.ini` config file and restarting the editor will also reset the inputs to the defaults.
+
+***I accidentally unbound or rebound the menu key to something and I now I can't open the menu to change it back, what do I do?***
+
+Reset the input settings back to the default as explained in the above sections.
+This functionality is included in the example project for demonstration purposes, and you may want to consider not allowing rebinding the menu key in your game if it's possible for players to get into a stuck state.
+
 ***Does this work on Linux?***
 
 Linux isn't officially supported or tested as a target platform, but everything in the plugin works across platforms and in fact multiple users have confirmed full compatibility.
-To allow the plugin to compile on Linux, you need to add Linux to the WhitelistPlatforms in the `AutoSettings.uplugin` file.
+To allow the plugin to compile on Linux, you need to add Linux to the WhitelistPlatforms in the `AutoSettings.uplugin` file, or remove the WhitelistPlatforms section to allow it to be compiled on every platform.
