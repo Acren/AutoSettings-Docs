@@ -102,3 +102,13 @@ This is useful for analog inputs such as gamepad thumbsticks where you might wan
 
 If the user presses up on the left thumbstick to bind *Move Forward*, the correct mapping for the system to register would be *Gamepad Left Thumbstick Y-Axis* with a scale of *1*.
 If no association is set, the system will register the raw user key pressed which in that case would be *Gamepad Left Thumbstick Up*. This would still move the character forward when pressed, but only support values of 0 and 1 and not analog values such as 0.5.
+
+# Resetting saved inputs
+
+You can provide the user with a way to reset their input mappings by switching to a preset.
+Calling `Set Player Input Preset` or `Set Player Input Preset By Tag` will reset their mappings to the specific preset, which also serves as a way to reset to the defaults if the project does not have multiple input presets.
+The example project demonstrates this using a preset switcher.
+
+You can also manually clear the saved inputs from the `Input.ini` config file by deleting them from the `[/Script/AutoSettings.InputMappingManager]` section, then restarting the editor.
+
+For more information on config files, see the [config files page.](/config-files/)

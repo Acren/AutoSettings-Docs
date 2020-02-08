@@ -18,26 +18,20 @@ The value falls back to the index of the array if empty, which makes it a bit fa
 
 ***Where do settings get saved?***
 
-Settings are saved to the `Settings.ini` config file in the `[Settings]` section. Input bindings are saved in `Input.ini` in the `[/Script/AutoSettings.InputMappingManager]` section.
+See the [config files page.](/config-files/)
 
-Unreal saves config files to different directories depending on the configuration:
+***How do I reset saved inputs back to the defaults?***
 
-Context                       | Config directory
------------------------------ | ------------------
-Editor:                       |**`<Project directory>\Saved\Config\<Platform>`**
-Development and Debug builds: |**`<Package directory>\Saved\Config\<Platform>`**
-Shipping builds:              |**`AppData\Local\<Project name>\Saved\Config\<Platform>`**
+See [resetting saved inputs.](/input-binding/#resetting-saved-inputs)
 
 ***Why do inputs not update in game when I change them in the project settings?***
 
-This usually means the inputs have been modified in-game and so the defaults are not being used anymore.
-This can be fixed by resetting the player's in-game inputs to the default with the Set Player Input Preset or Set Player Input Preset By Tag nodes. If you are using the menu from the example project, there is already a preset switcher for this.
-Alternatively, deleting the `[/Script/AutoSettings.InputMappingManager]` section from the `Input.ini` config file and restarting the editor will also reset the inputs to the defaults.
+This usually means the inputs have been modified in-game and so the defaults are not being used anymore. See [resetting saved inputs.](/input-binding/#resetting-saved-inputs)
 
 ***I accidentally unbound or rebound the menu key to something and I now I can't open the menu to change it back, what do I do?***
 
-Reset the input settings back to the default as explained in the above sections.
-This functionality is included in the example project for demonstration purposes, and you may want to consider not allowing rebinding the menu key in your game if it's possible for players to get into a stuck state.
+Reset the input settings back to the default as explained in [resetting saved inputs.](/input-binding/#resetting-saved-inputs)
+The ability to rebind the menu key is included in the example project for demonstration purposes, and you may want to consider not allowing it in your game if it's possible for users to get into a stuck state.
 
 ***Does this work on Linux?***
 

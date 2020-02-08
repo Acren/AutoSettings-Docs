@@ -6,6 +6,7 @@ pages:
     - Settings: settings.md
     - Input Binding: input-binding.md
     - Styling: styling.md
+    - Config Files: config-files.md
     - Example Project: example-project.md
     - Versions: versions.md
     - Common Issues & FAQ: faq.md
