@@ -10,5 +10,6 @@ pages:
     - Example Project: example-project.md
     - Versions: versions.md
     - Common Issues & FAQ: faq.md
+    - Troubleshooting: troubleshooting.md
     - Support: support.md
 theme: readthedocs

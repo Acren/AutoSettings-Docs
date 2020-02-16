@@ -1,3 +1,7 @@
+***My settings aren't working, what should I do?***
+
+See the [troubleshooting page.](/troubleshooting/)
+
 ***Why don't settings save when running Standalone mode from editor?*** 
 
 By default Unreal disallows saving config from standalone mode, changes are not saved to config (but works fine in editor and packaged). If you go to **Editor Preferences > Level Editor - Play > Play in Standalone Game**, expand the advanced settings, and in **Additional Launch Parameters** put in `-MultiprocessSaveConfig`
