@@ -7,6 +7,7 @@ The example project does not always need to match, but it is recommended to use 
 
 Plugin  | Engine | Example Project
 ------- | ------ | ------------
+1.9     | 4.24   | 1.8
 1.8     | 4.24   | 1.8
 1.7.1   | 4.23   | 1.7
 1.7     | 4.23   | 1.7
@@ -30,6 +31,19 @@ Plugin  | Engine | Example Project
 1.0     | 4.17   | 1.0
 
 # Release Notes
+
+## 1.9
+
+New:
+
+- Added `Get Player Action Mapping` and `Get Player Axis Mapping` Blueprint functions for easy retrieval of specific active mappings
+- Added validation to detect misconfiguration that could cause issues
+- More logs and checks to make troubleshooting easier
+
+Fixed:
+
+- Bool CVar functions now correctly operate on actual bool CVars.
+- Fixed crash in `BindCaptureButton` when `BindCapturePromptClass` is null
 
 ## 1.8
 
