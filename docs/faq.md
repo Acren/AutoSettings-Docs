@@ -37,7 +37,8 @@ This usually means the inputs have been modified in-game and so the defaults are
 Reset the input settings back to the default as explained in [resetting saved inputs.](/input-binding/#resetting-saved-inputs)
 The ability to rebind the menu key is included in the example project for demonstration purposes, and you may want to consider not allowing it in your game if it's possible for users to get into a stuck state.
 
-***Does this work on Linux?***
+***Does Auto Settings work on platforms other than Windows?***
 
-Linux isn't officially supported or tested as a target platform, but everything in the plugin works across platforms and in fact multiple users have confirmed full compatibility.
-To allow the plugin to compile on Linux, you need to add Linux to the WhitelistPlatforms in the `AutoSettings.uplugin` file, or remove the WhitelistPlatforms section to allow it to be compiled on every platform.
+Other platforms are not officially supported or tested as a target platform, but all of the plugin functionality is platform-independent and in fact multiple users have confirmed full compatibility with various other platforms.
+To allow the plugin to compile on other platforms, you need to add them to the `WhitelistPlatforms` section in the `AutoSettings.uplugin` file, or remove the section to allow it to be compiled on every platform.
+Platforms that have worked other than Windows include Linux, Xbox, PS4, and Switch.
