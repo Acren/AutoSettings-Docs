@@ -51,7 +51,7 @@ New:
 
 - UE 4.24 now supported
 - Added helper functions to support usage of CVars as booleans, which are actually just integers with the value 0 or 1 under the hood
-- Added a property to BindCaptureButton to control the Z-order of the prompt it creates, without having to override InitializePrompt
+- Added a property to `BindCaptureButton` to control the Z-order of the prompt it creates, without having to override `InitializePrompt`
 
 Fixed:
 
@@ -66,7 +66,7 @@ Example project:
 
 ## 1.7.1
 
-- Plugin LoadingPhase changed to PreDefault, fixing a bug occurring in some projects that was causing Blueprints that were referencing the plugin to break when the engine was loaded
+- Plugin LoadingPhase changed to `PreDefault`, fixing a bug occurring in some projects that was causing Blueprints that were referencing the plugin to break when the engine was loaded
 
 ## 1.7
 
@@ -78,11 +78,11 @@ Example project:
 
 ## 1.5.4
 
-- Fixed SetPlayerKeyGroup (for dynamic icon display based on input device) not working
+- Fixed `SetPlayerKeyGroup` (for dynamic icon display based on input device) not working
 
 ## 1.5.3
 
-- Fixed crash in some projects due to KeyLabel binding a delegate that is already bound
+- Fixed crash in some projects due to `KeyLabel` binding a delegate that is already bound
 
 ## 1.5.2
 
@@ -100,28 +100,28 @@ Example project:
 
 New:
 
-- PlayerControllers can determine which input preset they should use by default via IAutoSettingsPlayer interface
-- PlayerControllers can determine how to save and load input mappings via IAutoSettingsPlayer interface
+- PlayerControllers can determine which input preset they should use by default via `IAutoSettingsPlayer` interface
+- PlayerControllers can determine how to save and load input mappings via `IAutoSettingsPlayer` interface
 This is useful if you need to store saved mappings yourself instead of using the default config implementation
-- Added a OnPressed capture mode to BindCapturePrompt which makes it possible to capture input on key down rather than key up, if you are not using modifier keys
-- BindCapturePrompt can be restricted to only accept input from a Key Group, rejecting other input and staying open
-- Added BlacklistedActions and BlacklistedAxes to Auto Settings config, allowing input mappings to be ignored by the system
-- Exposed some more properties of various widgets with BlueprintReadWrite and BlueprintReadOnly
+- Added a `OnPressed` capture mode to `BindCapturePrompt` which makes it possible to capture input on key down rather than key up, if you are not using modifier keys
+- `BindCapturePrompt` can be restricted to only accept input from a Key Group, rejecting other input and staying open
+- Added `BlacklistedActions` and `BlacklistedAxes` to Auto Settings config, allowing input mappings to be ignored by the system
+- Exposed some more properties of various widgets with `BlueprintReadWrite` and `BlueprintReadOnly`
 - Added "Update" functions to some widget types that is called when properties change at runtime, which can be used for responding to data changes as an alternative to UMG's data binding 
 - InputMapping (ActionMapping and AxisMapping) can now be passed a chord from an external source to bind it to an action or axis
-- Added OnChordRejected and OnCapturePromptClosed delegates to BindCapturePrompt
-- Added bIgnoreGameViewportInputWhileCapturing property to BindCapturePrompt to control if the prompt should block input from the game viewport
+- Added `OnChordRejected` and `OnCapturePromptClosed` delegates to `BindCapturePrompt`
+- Added `bIgnoreGameViewportInputWhileCapturing` property to `BindCapturePrompt` to control if the prompt should block input from the game viewport
 
 Editor:
 
-- ActionLabel and AxisLabel will now preview the default input preset in the editor
-(e.g. if an ActionLabel is for Jump, it would show Spacebar if that's the default mapping)
-This requires the KeyLabel you are using to implement UpdateKeyLabel
-- Added TitleProperty meta tag to many config arrays allowing the contents to be viewed more easily while editing Auto Settings config in project settings
+- `ActionLabel` and `AxisLabel` will now preview the default input preset in the editor
+(e.g. if an `ActionLabel` is for Jump, it would show Spacebar if that's the default mapping)
+This requires the KeyLabel you are using to implement `UpdateKeyLabel`
+- Added `TitleProperty` meta tag to many config arrays allowing the contents to be viewed more easily while editing Auto Settings config in project settings
 
 ## 1.4.1
 
-- Properly exposed Apply Setting and Save Setting functions to Blueprint. These were intended to be exposed in a previous version but not correctly set up as static Blueprint-callable functions.
+- Properly exposed `Apply Setting` and `Save Setting` functions to Blueprint. These were intended to be exposed in a previous version but not correctly set up as static Blueprint-callable functions.
 
 ## 1.4
 
@@ -135,7 +135,7 @@ This requires the KeyLabel you are using to implement UpdateKeyLabel
 New:
 
 - Added option to disable automatic player input initialization in plugin settings and call it manually using `InitializePlayerInputOverrides`.
-- Added the ability for projects to override how the plugin uniquely identifies players for storing inputs by implementing the AutoSettingsPlayer interface on PlayerController - by default it still uses the Controller ID of the local player.
+- Added the ability for projects to override how the plugin uniquely identifies players for storing inputs by implementing the `IAutoSettingsPlayer` interface on PlayerController - by default it still uses the Controller ID of the local player.
 - Slider setting no longer auto-saves every delta while the handle is being dragged, which was performance heavy as it was writing to config each time. Now it can still auto-apply while the handle is being dragged, but only auto-saves once the handle is released.
 - Added option to control sensitivity of mouse-axis binding, specifying how far the mouse must move before it is registered.
 - Added the ability to manually add input overrides using `AddPlayerActionOverride` and `AddPlayerAxisOverride`.
@@ -148,7 +148,7 @@ Fixed:
 - Setting widgets now read their initial value from their applied console variable if available instead of saved config. This fixes the unintended behavior of settings showing the saved value instead of the applied value where the two differ.
 - Fixed a bug with input binding where left mouse button would register as none / invalid if pressed within a second or so of the prompt opening.
 - Fixed bug with some saved settings such as max FPS being overridden by engine initialization. Saved setting values are now applied after engine initialization so that they take precedence over engine values.
-- Fixed Cancel reverting the setting to the applied value. It now reverts to the saved value instead.
+- Fixed `Cancel` reverting the setting to the applied value. It now reverts to the saved value instead.
 - Fixed issues while saving settings with masked values (e.g. Resolution / window mode) recombining with applied values instead of saved values.
 - Fixed settings with unapplied changes being incorrectly reverted when any console variable is changed, including other settings
 
@@ -181,17 +181,17 @@ Example project:
 
 New:
 
-- Added the ability to dynamically prioritize between different Key Groups for action and axis labels. Set this by calling "Set Player Key Group", or "UInputMappingManager::SetPlayerKeyGroupStatic" in code. Example usage for this would be automatically switching input prompts between gamepad and keyboard & mouse when the player changes input mode.
+- Added the ability to dynamically prioritize between different Key Groups for action and axis labels. Set this by calling `Set Player Key Group`, or `UInputMappingManager::SetPlayerKeyGroupStatic` in code. Example usage for this would be automatically switching input prompts between gamepad and keyboard & mouse when the player changes input mode.
 - To support dynamic Key Group priorities, an empty tag for Key Group now represents "any" rather than the keys that are not used by any other key group. Projects with a gamepad key group will now also probably want a key group for keyboard and mouse. The keys used for prompts using an empty/any key group will be dynamically selected based on the player's Key Group.
 - Similarly, a Mapping Group of -1 represents "any". 0 is still the first mapping group, 1 the next, etc.
-- Added an easy "Use non-gamepad keys" option to Key Group so that users don't have to add every single key to a key group for keyboard and mouse.
+- Added an easy `Use non-gamepad keys` option to Key Group so that users don't have to add every single key to a key group for keyboard and mouse.
 - Added the ability to bind mouse axes so that users can re-bind "look" inputs. Mouse axes can be blacklisted to revert to old behavior.
-- All BindWidget properties are now read-exposed to Blueprint. This means you can now access the internal control of a setting without needing to use code.
-- Exposed "Is CVar Registered" function to Blueprint.
+- All `BindWidget` properties are now read-exposed to Blueprint. This means you can now access the internal control of a setting without needing to use code.
+- Exposed `Is CVar Registered` function to Blueprint.
 
 Fixed:
 
-- Fixed error logs caused by ActionLabel trying to create widgets at design time.
+- Fixed error logs caused by `ActionLabel` trying to create widgets at design time.
 - Fixed warning logs caused by trying to register a setting for a CVar that already exists when the game is run past the first time in an editor session.
 - Converted plugin to IWYU to decrease compile times
 
@@ -209,7 +209,7 @@ Example project:
 
 ## 1.1
 
-- Added a function on Slider Setting called when its value changes. This allows users to easily have a text label reflect the value.
+- Added a function on `Slider Setting` called when its value changes. This allows users to easily have a text label reflect the value.
 - Added tooltip to option value explaining that it falls back to the array index if blank
 - Added new settings to example project:
 	- View distance quality
@@ -217,7 +217,7 @@ Example project:
 	- Field of view
 	- Motion blur quality
 	- Bloom quality
-- LoadingPhase set to Default - previously on PostEngineInit to support logic that has since been changed
+- LoadingPhase set to `Default` - previously on `PostEngineInit` to support logic that has since been changed
 - Fixed category errors when packaging
 - Fixed crash from widgets attempting to apply or save settings during design time
 
