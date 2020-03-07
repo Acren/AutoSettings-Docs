@@ -42,3 +42,8 @@ The ability to rebind the menu key is included in the example project for demons
 Other platforms are not officially supported or tested as a target platform, but all of the plugin functionality is platform-independent and in fact multiple users have confirmed full compatibility with various other platforms.
 To allow the plugin to compile on other platforms, you need to add them to the `WhitelistPlatforms` section in the `AutoSettings.uplugin` file, or remove the section to allow it to be compiled on every platform.
 Platforms that have worked other than Windows include Linux, Xbox, PS4, and Switch.
+
+***I'm getting "DXGI_ERROR_INVALID_CALL" crashes in Unreal 4.23.1, what should I do?***
+
+This is due to a bug in Unreal (detailed [here](https://issues.unrealengine.com/issue/UE-81742))
+The only way to fix this is to change to another engine version.
