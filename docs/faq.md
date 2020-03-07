@@ -45,5 +45,5 @@ Platforms that have worked other than Windows include Linux, Xbox, PS4, and Swit
 
 ***I'm getting "DXGI_ERROR_INVALID_CALL" crashes in Unreal 4.23.1, what should I do?***
 
-This is due to a bug in Unreal (detailed [here](https://issues.unrealengine.com/issue/UE-81742))
+This is due to a bug in Unreal detailed [here](https://issues.unrealengine.com/issue/UE-81742).
 The only way to fix this is to change to another engine version.
