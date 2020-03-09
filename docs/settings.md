@@ -51,7 +51,10 @@ These functions operate on all the child settings in the layout of the User Widg
 # Console Variables
 
 Auto Settings is built on top of Unreal’s Console Variable (CVar) system, so adding a new setting always requires a CVar to exist for that setting. Unreal has hundreds of CVars built in which can be exposed with Auto Settings.
-For a full list, check **Help > Console Variables** in the editor.
+
+There many common settings already implemented in the [example project](/example-project).
+
+For a full list of CVars in the engine, check **Help > Console Variables** in the editor.
 
 There are cases in which you might want to expose something as a setting that isn’t built into Unreal by default, for example audio levels.
 
@@ -61,7 +64,7 @@ There are a few components to doing this:
 2. Using the CVar to control something in the game
 3. Adding a setting for the CVar (already covered)
 
-Registering and using CVars in C++ is covered in Epic’s documentation [here](https://docs.unrealengine.com/latest/INT/Programming/Development/Tools/ConsoleManager/index.html).
+Registering and using CVars in C++ is covered in the [Unreal documentation](https://docs.unrealengine.com/latest/INT/Programming/Development/Tools/ConsoleManager/index.html).
 
 There are also functions in this plugin to expose this to Blueprint, so I’ll outline them here.
 
