@@ -1,6 +1,10 @@
+##### *My project is crashing, what should I do?*
+
+See the [troubleshooting page.](/troubleshooting/#project-is-crashing)
+
 ##### *My settings aren't working, what should I do?*
 
-See the [troubleshooting page.](/troubleshooting/)
+See the [troubleshooting page.](/troubleshooting/#settings-are-not-working)
 
 ##### *Why don't settings save when running Standalone mode from editor?*
 
@@ -44,8 +48,3 @@ Other platforms are not officially supported or tested as a target platform, but
 To allow the plugin to compile on other platforms, you need to add them to the `WhitelistPlatforms` section in the `AutoSettings.uplugin` file, or remove the section to allow it to be compiled on every platform.
 
 Platforms that have been known to work other than Windows include **Linux**, **Xbox**, **PS4**, and **Switch**. Others may not have been tested yet.
-
-##### *I'm getting "DXGI_ERROR_INVALID_CALL" crashes in Unreal 4.23.1, what should I do?*
-
-This is due to a bug in Unreal detailed [here](https://issues.unrealengine.com/issue/UE-81742).
-The only way to fix this is to change to another engine version.

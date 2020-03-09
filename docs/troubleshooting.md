@@ -6,8 +6,22 @@ The [FAQ](/faq/) page might already have a solution for your issue.
 
 **Check the output log**
 
-Open the *Output Log* panel in the editor and try to reproduce the issue.
+Unless the editor is crashing, open the *Output Log* panel in the editor and try to reproduce the issue.
 The output log may show warnings, errors, or other clues that may help resolve the problem.
+
+# Project is crashing
+
+When the project is crashing, you should look for clues in the crash log or saved log file.
+
+**Error in crash log:** ***Could not find SuperStruct SomeClass to create SomeClass_C***
+
+This usually means you are running on a non-Windows platform that has not been whitelisted in the .uplugin file.
+See [FAQ on enabling other platforms](/faq/#does-auto-settings-work-on-platforms-other-than-windows).
+
+**Error in crash log:** ***DXGI_ERROR_INVALID_CALL***
+
+This is a known crash in Unreal 4.23.1 due to a bug in Unreal detailed [here](https://issues.unrealengine.com/issue/UE-81742).
+The only known way to fix this is to change to another engine version.
 
 # Settings are not working
 
