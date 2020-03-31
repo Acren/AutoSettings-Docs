@@ -78,3 +78,8 @@ Many CVars do not make an obvious visual difference in the viewport and an incom
 
 See if the issue occurs in the [example project.](/example-project/)
 If the issue does not happen in the example project, this could point to a configuration or implementation issue in your own project.
+
+**Get support**
+
+If still unable to fix the issue, read how to [get support.](/support/)
+Make sure to provide all of the information listed on the support page.
