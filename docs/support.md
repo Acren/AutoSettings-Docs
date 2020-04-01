@@ -13,8 +13,9 @@ If you do have a bug, crash, or any other issue please let me know the following
 
 - The engine version
 - The plugin version
+- Steps to reproduce the issue
 - Does the example project work?
-- If crashing, the .log file or pasted crash report
+- If crashing, the .log file(s) from the `ProjectName/Saved/Logs` directory
 
 Thanks!
 
