@@ -18,7 +18,7 @@ You can. See the [example project page.](/example-project/#migrating-assets-from
 
 ##### *Does the example project have gamepad navigation?*
 
-Not yet. I'd like to do this eventually, but haven't had time yet.
+Not currently. You should implement navigation the same way as the rest of your project, and call the functions on the setting widgets where appropriate.
 
 ##### *Why does the example project have empty values for the scalability settings, is this okay?*
 
