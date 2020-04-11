@@ -7,7 +7,7 @@ The example project does not always need to match, but it is recommended to use 
 
 Plugin  | Engine | Example Project
 ------- | ------ | ------------
-1.10    | 4.24   | 1.10
+1.10    | 4.24   | 1.10.1
 1.9     | 4.24   | 1.8
 1.8     | 4.24   | 1.8
 1.7.1   | 4.23   | 1.7
@@ -32,6 +32,12 @@ Plugin  | Engine | Example Project
 1.0     | 4.17   | 1.0
 
 # Release Notes
+
+## 1.10.1
+
+Example project:
+
+- Remove debug print that was left in by mistake
 
 ## 1.10
 
