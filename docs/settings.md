@@ -100,6 +100,8 @@ Check the example project for full implementation of custom CVars to control gam
 
 # Default Values
 
+It's likely you'll at some point want to change the default values of your settings.
+
 When registering a new CVar in either C++ or Blueprint, you are given the option to specify a default value.
 
 This is useful when you are defining new CVars that are not built into the engine already, but you may find yourself with the need to change the default value of an existing CVar.
@@ -112,6 +114,8 @@ r.MyCvar = 2
 ```
 
 If specified, the value in the file will apply when the engine is initialized, which will then be overridden by user's saved value if it has been changed.
+
+For setting quality levels on different devices, it's recommended to use the [Device Profiles](https://docs.unrealengine.com/en-US/Platforms/DeviceProfiles/index.html) system.
 
 # Value Masks
 
@@ -138,3 +142,4 @@ In the case of ResolutionValueMask, this would take the current r.SetRes console
 In the WindowModeValueMask subclass, this would take the *1920x1080wf* console value, and substitute a modified setting value for window mode such as *f* (fullscreen), creating the final console value of *1920x1080f*.  
 
 ![Image](/images/image19.png)
+
