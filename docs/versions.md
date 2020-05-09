@@ -7,6 +7,7 @@ The example project does not always need to match, but it is recommended to use 
 
 Plugin  | Engine | Example Project
 ------- | ------ | ------------
+1.11    | 4.25   | 1.11
 1.10    | 4.24   | 1.10.1
 1.9     | 4.24   | 1.8
 1.8     | 4.24   | 1.8
@@ -32,6 +33,16 @@ Plugin  | Engine | Example Project
 1.0     | 4.17   | 1.0
 
 # Release Notes
+
+## 1.11
+
+- UE 4.25 now supported
+- All setting widgets now preview the current CVar value in editor
+- Added `Get Radio Button Widgets` function to `Radio Select` to return the current button widgets
+- Added `On Button Created` implementable function to `Radio Select` to allow configuring slots for new buttons
+- Added `Work Scale`, `CPU Multiplier`, and `GPU Multiplier` parameters to `Auto Detect Settings` which are passed into the engine's benchmark
+- Axis Associations for Gamepad thumbsticks are now set up by default in the project settings
+- Improved logging and error handling
 
 ## 1.10.1
 
