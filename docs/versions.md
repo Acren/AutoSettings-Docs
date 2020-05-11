@@ -48,7 +48,7 @@ Plugin  | Engine | Example Project
 
 Example project:
 
-- Remove debug print that was left in by mistake
+- Removed debug print that was left in by mistake
 
 ## 1.10
 
