@@ -7,6 +7,7 @@ The example project does not always need to match, but it is recommended to use 
 
 Plugin  | Engine | Example Project
 ------- | ------ | ------------
+1.12    | 4.25   | 1.12
 1.11    | 4.25   | 1.11
 1.10    | 4.24   | 1.10.1
 1.9     | 4.24   | 1.8
@@ -33,6 +34,25 @@ Plugin  | Engine | Example Project
 1.0     | 4.17   | 1.0
 
 # Release Notes
+
+## 1.12
+
+New:
+
+- Input Mapping system now store only the modified mappings, and applies them on top of the preset mappings. This means changes to the project input presets will now affect players with custom mappings too, unless the changes would cause a collision.
+- Added project settings to change the config file and section that settings are stored in
+- Exposed `Left Value` and `Right Value` of `Slider Setting` to Blueprint
+- Exposed `Get Unique Player Identifier` and `Get Default Input Mapping Preset` of `Auto Settings Player` interface to Blueprint
+- Changed the default Mouse Capture Distance from 20 to 80, to reduce the likelihood of accidentally capturing mouse axes for input mappings
+
+Fixed:
+
+- There was an issue in the previous 1.11 version causing project settings for Axis Associations to be lost because of config files being stripped out of the plugin during the marketplace deployment process. Added a workaround to fix this. If your project was using the 1.11 version at any point, please also check the Axis Associations in the project settings are set up correctly.
+
+Example project:
+
+ - Added secondary columns on the Input page for both KB+M and Gamepad as a new example of multiple mapping groups in use
+ - Added another map with an example scenario showing the implementation of custom saving and loading logic to store player inputs on a Save Game class instead of in config files, which is useful when shipping on console platforms
 
 ## 1.11
 
