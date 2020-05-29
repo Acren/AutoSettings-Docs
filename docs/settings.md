@@ -1,3 +1,5 @@
+# Setting Widgets
+
 To add a setting to your menu, place the widget for the desired control type from the **AutoSettings Setting Controls** category anywhere in your menu.
 
 > Tip: It can be nice for layout purposes to wrap settings in a new *Setting Row* widget which consists of label text and a Named Slot to contain the control widget itself (See example project) but you are free to set up the layout of your menu whichever way works best for you.
@@ -143,3 +145,25 @@ In the WindowModeValueMask subclass, this would take the *1920x1080wf* console v
 
 ![Image](/images/image19.png)
 
+# Audio Levels
+
+**Audio levels** are a common way to use custom settings in Auto Settings. The plugin itself does not treat audio levels differently to any other setting, so you should add a setting to your project for each audio level and have them modify the **Sound Classes** in your project.
+
+A working setup with multiple audio levels is implemented in the [example project](/example-project), though the following steps describe how to set one up from scratch:
+
+1. Create a **Sound Class** asset for the new audio level
+2. If applicable, set up parent or child Sound Classes. For example, if the new audio level is for **Sound Effects**, you may want to add the new **Sound Effect Sound Class** as a child of a **Master Sound Class** that you have already.
+
+![Image](/images/soundclasses.png)
+
+3. Create a **Sound Mix** asset for the new audio level
+4. In your **Game Instance** class, [register a *float CVar*](#console-variables) and add a callback for the CVar which calls **Push Sound Mix Modifier** with the Sound Mix, and then **Set Sound Mix Class Override** with the Sound Mix and the Sound Class, and pass in the CVar value as the Volume. This is what actually changes the volume of the Sound Class when the value of the CVar is modified. 
+
+![Image](/images/audiolevels.png)
+
+**Note:** It's important that this happens after a **Delay** node (even with 0 duration) as the Audio Devices in Unreal are not created yet when the Game Instance **Init** function is called.
+
+![Image](/images/gameinstanceaudiodelay.png)
+
+5. [Add a Setting Widget](#setting-widgets) to your menu to control the new CVar you created
+6. Add the new Sound Class to all of the audio assets that should use the new audio level
