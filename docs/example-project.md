@@ -9,7 +9,7 @@ For example if you had plugin version *1.2.1*, there is no example project with 
 
 # Migrating assets from the example project
 
-If you so wish, you can migrate assets or the entire menu from the example project to your own.
+If you want to use assets or the entire menu from the example project, you can migrate them to your own project.
 
 [The entire process is shown in this video](https://www.youtube.com/watch?v=eL02UKsATZ4)
 

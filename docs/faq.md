@@ -16,9 +16,11 @@ This should allow standalone mode to save config and thus your settings will be 
 
 You can. See the [example project page.](/example-project/#migrating-assets-from-the-example-project)
 
-##### *Does the example project have gamepad navigation?*
+##### *Does Auto Settings have gamepad support?*
 
-Not currently. You should implement navigation the same way as the rest of your project, and call the functions on the setting widgets where appropriate.
+The plugin has full support for remapping gamepad inputs as part of the input mapping system.
+Menu gamepad navigation is not currently implemented in the example project because there isn't a standard way to implement gamepad navigation in Unreal Engine yet.
+You should implement navigation the same way as the rest of your project, and call the functions on the setting widgets where appropriate.
 
 ##### *Why does the example project have empty values for the scalability settings, is this okay?*
 
