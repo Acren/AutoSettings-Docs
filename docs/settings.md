@@ -167,3 +167,14 @@ A working setup with multiple audio levels is implemented in the [example projec
 	
 5. [Add a Setting Widget](#setting-widgets) to your menu to control the new CVar you created
 6. Add the new Sound Class to all of the audio assets that should use the new audio level
+
+# Custom Setting Widgets
+
+In addition to the built-in Setting Widget types for common controls, you can create your own to handle more specific cases if you need.
+
+1. Create a new **Widget Blueprint** or **User Widget** based on the **AutoSettingWidget** type. In Blueprint, you have to go to the **Graph** > **Class Settings** and set the **Parent Class**
+2. Add any widgets for the actual visible layout of the setting
+3. Override **Update Selection** and pass the **Value** to your UI. This is responsible for updating the view when the setting changes, including when the widget is first constructed.
+4. When the user adjusts the UI, call **Apply Setting Value** with the **Value** that they selected. This will notify the system that the chosen value has changed, which may apply or save it as necessary.
+
+Values should be converted to and from string format when interacting with these functions.
