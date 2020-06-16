@@ -7,6 +7,7 @@ The example project does not always need to match, but it is recommended to use 
 
 Plugin  | Engine | Example Project
 ------- | ------ | ------------
+1.13    | 4.25   | 1.13
 1.12    | 4.25   | 1.12
 1.11    | 4.25   | 1.11
 1.10    | 4.24   | 1.10.1
@@ -34,6 +35,17 @@ Plugin  | Engine | Example Project
 1.0     | 4.17   | 1.0
 
 # Release Notes
+
+## 1.13
+
+Fixed:
+
+- Fixed an issue involving settings that change other settings (For example, Post Process Quality modifying Bloom Quality and Motion Blur Quality), that was causing the inner setting value to be lost upon engine load if it was initially modified before the outer setting value
+- Fixed an issue that was causing Auto-Detect scalability to not affect scalability categories that had already been set by console
+
+Example project:
+
+- The numeric label in the Styled Slider Setting widget is now an editable text box which allows the user to set the value more precisely
 
 ## 1.12
 
