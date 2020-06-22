@@ -54,11 +54,11 @@ These functions operate on all the child settings in the layout of the User Widg
 
 Auto Settings is built on top of Unreal’s Console Variable (CVar) system, so adding a new setting always requires a CVar to exist for that setting. Unreal has hundreds of CVars built in which can be exposed with Auto Settings.
 
-There many common settings already implemented in the [example project](/example-project).
+There are many common settings already implemented in the [example project](/example-project).
 
 For a full list of CVars in the engine, check **Help > Console Variables** in the editor.
 
-There are cases in which you might want to expose something as a setting that isn’t built into Unreal by default, for example audio levels.
+There are also cases in which you might want to expose something as a setting that isn’t built into Unreal by default, for example audio levels.
 
 There are a few components to doing this:
 
