@@ -55,6 +55,16 @@ You can prioritise a key icon set globally using the **Set Global Key Icon Tags*
 
 Since you can have multiple tags on a key icon set, these two methods of switching between them can be used at the same time allowing you to switch between gamepad type based on a setting, and switch between small or large variants based on location in project.
 
+# Reading and displaying player mappings
+
+It's common to need to display player mappings in UI, for example to prompt the player to perform an action. The **Action Label** and **Axis Label** widgets can be placed in your UI and used to automatically display the correct key icons or text label for an Action or Axis mapping, and also dynamically update when the player's mappings are changed, or their Key Groups are changed in case they switch input devices.
+
+These widgets can be sub-classed following the [styling](/styling) guidelines to control the appearance including the text style and the icon sizes. These use the same logic as the **Action Mapping** and **Axis Mapping** widgets, and are in-fact used internally by them for displaying the current mappings.
+
+If you want to directly read the active key mappings for a player, call the **Get Player Action Mapping** and **Get Player Axis Mapping** functions to access the key mappings applied to the player.
+
+Please note the engine's built in **Get Action Mapping by Name** and **Get Axis Mapping by Name** functions on the **Input Settings** class will not be accurate for this use as they only retrieve the default mappings from the project settings and not the mappings that are actually applied to the player.
+
 # Configuration
 
 The input binding functionality of the plugin can be globally configured in the **AutoSettings** page of your project settings.
