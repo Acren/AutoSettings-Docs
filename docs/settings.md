@@ -125,7 +125,7 @@ For setting quality levels on different devices, it's recommended to use the [De
 
 Any Auto Settings setting control can optionally use a Value Mask by setting the **Value Mask** property to a subclass of the **SettingValueMask** class that determines how the value of the console variables should be split and recombined.
 
-![Image](/images/image4.png)
+![Image](/images/valuemask.png)
 
 Example usage might be splitting the **r.SetRes** console variable - which contains both resolution and window mode in the form of *1920x1080wf* - into two separate settings, one controlling the resolution and the other controlling the window mode.
 
