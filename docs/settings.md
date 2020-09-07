@@ -168,6 +168,8 @@ A working setup with multiple audio levels is implemented in the [example projec
 5. [Add a Setting Widget](#setting-widgets) to your menu to control the new CVar you created
 6. Add the new Sound Class to all of the audio assets that should use the new audio level
 
+> Tip: For music, it's recommended to enable **Virtualize when silent** on the sound asset. This makes it so when its volume is set to zero and then increased again, the music keeps its playback time rather than starting from the beginning again.
+
 # Custom Setting Widgets
 
 In addition to the built-in Setting Widget types for common controls, you can create your own to handle more specific cases if you need.
