@@ -2,17 +2,17 @@
 
 To add a setting to your menu, place the widget for the desired control type from the **AutoSettings Setting Controls** category anywhere in your menu.
 
-> Tip: It can be nice for layout purposes to wrap settings in a new *Setting Row* widget which consists of label text and a Named Slot to contain the control widget itself (See example project) but you are free to set up the layout of your menu whichever way works best for you.
+> Tip: It can be nice for layout purposes to wrap settings in a new *Setting Row* widget which consists of label text and a Named Slot to contain the control widget itself (See [example project](/example-project)) but you are free to set up the layout of your menu whichever way works best for you.
 
 ![Image](/images/image15.png)
 
 All settings have the following editable properties:
 
 - **CVar Name** is the name of the console variable to expose - this can be a built-in Unreal console variable such as a scalability setting or vsync, one declared specifically for your project, or even one declared in another plugin if applicable.
-*See **Console Variables** section.*
+*See [Console Variables](#console-variables).*
 
 - **Value Mask** (optional) is a subclass of the **SettingValueMask** class used to split console variables into multiple independent settings in your menu.
-*See **Value Masks** section.*
+*See [Value Masks](#value-masks).*
 
 - **Auto Apply** - If true, the setting will automatically apply and call the console variable with the new value when the user changes the selection. If false, will need to be done manually with the Apply function.
 
