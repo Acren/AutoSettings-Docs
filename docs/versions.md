@@ -7,6 +7,7 @@ The example project does not always need to match, but it is recommended to use 
 
 Plugin  | Engine | Example Project
 ------- | ------ | ------------
+1.14    | 4.25   | 1.13
 1.13    | 4.25   | 1.13
 1.12    | 4.25   | 1.12
 1.11    | 4.25   | 1.11
@@ -36,6 +37,16 @@ Plugin  | Engine | Example Project
 
 # Release Notes
 
+## 1.14
+
+New:
+- Added a `Regenerate Options` function to `Select Setting` which when called, will trigger a re-evaluation of the `Option Factory` and reconstruction of available options. This is useful where the available options need to change dynamically based on the conditions set up inside the Option Factory class.
+- Error handling and logging improvements
+
+Fixed:
+- Player inputs not being registered in Play As Client
+- Crash when using the debug camera (; key) in editor, because Auto Settings wasn't expecting the `Local Player` to be removed
+
 ## 1.13
 
 Fixed:
@@ -45,7 +56,7 @@ Fixed:
 
 Example project:
 
-- The numeric label in the Styled Slider Setting widget is now an editable text box which allows the user to set the value more precisely
+- The numeric label in the `Styled Slider Setting` widget is now an editable text box which allows the user to set the value more precisely
 
 ## 1.12
 
