@@ -46,8 +46,8 @@ New:
 
 Fixed:
 
-- Player inputs not being registered in Play As Client
-- Crash when using the debug camera (; key) in editor, because Auto Settings wasn't expecting the `Local Player` to be removed
+- Fixed player inputs not being registered in Play As Client
+- Fixed a crash when using the debug camera (; key) in editor, because Auto Settings wasn't expecting the `Local Player` to be removed
 
 ## 1.13
 
