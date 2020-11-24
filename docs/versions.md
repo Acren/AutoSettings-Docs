@@ -40,10 +40,12 @@ Plugin  | Engine | Example Project
 ## 1.14
 
 New:
+
 - Added a `Regenerate Options` function to `Select Setting` which when called, will trigger a re-evaluation of the `Option Factory` and reconstruction of available options. This is useful where the available options need to change dynamically based on the conditions set up inside the Option Factory class.
 - Error handling and logging improvements
 
 Fixed:
+
 - Player inputs not being registered in Play As Client
 - Crash when using the debug camera (; key) in editor, because Auto Settings wasn't expecting the `Local Player` to be removed
 
