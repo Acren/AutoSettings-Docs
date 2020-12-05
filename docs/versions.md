@@ -7,6 +7,7 @@ The example project does not always need to match, but it is recommended to use 
 
 Plugin  | Engine | Example Project
 ------- | ------ | ------------
+1.15    | 4.26   | 1.15
 1.14    | 4.25   | 1.13
 1.13    | 4.25   | 1.13
 1.12    | 4.25   | 1.12
@@ -36,6 +37,10 @@ Plugin  | Engine | Example Project
 1.0     | 4.17   | 1.0
 
 # Release Notes
+
+## 1.15
+
+- UE 4.26 now supported
 
 ## 1.14
 
