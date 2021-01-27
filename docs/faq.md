@@ -48,6 +48,6 @@ The ability to rebind the menu key is included in the example project for demons
 Other platforms are not officially supported or tested as a target platform, but all of the plugin functionality is platform-independent and in fact multiple users have confirmed full compatibility with various other platforms.
 
 The project will need to support code and compile through Visual Studio or another IDE to support non-Windows platforms.
-To allow the plugin to compile on other platforms, you need to add them to the `WhitelistPlatforms` section in the `AutoSettings.uplugin` file, or remove the section to allow it to be compiled on every platform.
+To allow the plugin to compile on other platforms, you need to add them to the `WhitelistPlatforms` section in the `AutoSettings.uplugin` file, or remove the whitelist section to allow it to be compiled on every platform.
 
-Platforms that have been known to work other than Windows include **Linux**, **Xbox**, **PS4**, and **Switch**. Others may not have been tested yet.
+Platforms that have been known to work other than Windows include **macOS**, **Linux**, **Xbox**, **PS4**, and **Switch**. Others may not have been tested yet.
