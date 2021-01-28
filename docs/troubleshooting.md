@@ -9,6 +9,15 @@ The [FAQ](/faq/) page might already have a solution for your issue.
 Unless the editor is crashing, open the *Output Log* panel in the editor and try to reproduce the issue.
 The output log may show warnings, errors, or other clues that may help resolve the problem.
 
+# Project won't build or package
+
+When the project won't build or package, check the log for errors.
+
+**Error:** ***Expecting to find a type to be declared in a module rules named 'SubstanceCore' in UE4Rules***
+
+This is a known bug in Unreal 4.25.2 detailed [here](https://issues.unrealengine.com/issue/UE-95865).
+Try updating Unreal or one of the workarounds from the issue page.
+
 # Project is crashing
 
 When the project is crashing, you should look for clues in the crash log or saved log file.
