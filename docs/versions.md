@@ -7,6 +7,8 @@ The example project does not always need to match, but it is recommended to use 
 
 Plugin  | Engine | Example Project
 ------- | ------ | ------------
+1.16.1  | 4.26   | 1.16
+1.16    | 4.26   | 1.16
 1.15    | 4.26   | 1.15
 1.14    | 4.25   | 1.13
 1.13    | 4.25   | 1.13
@@ -37,6 +39,17 @@ Plugin  | Engine | Example Project
 1.0     | 4.17   | 1.0
 
 # Release Notes
+
+## 1.16.1
+
+- Fixed a bug with the directional axis icons in 1.16 where inverted icons were being shown for the Gamepad Right Stick Y axis because of how Unreal inverts it under the hood. The plugin should now "flip back" the displayed axis if the axis mapping has the -1 scale, which is how Right Stick Y is normally mapped to undo the inversion.
+
+## 1.16
+
+- Added support for showing directional axis button icons if the texture is available. For example, show the icon for Gamepad Left Stick Up if it exists instead of Gamepad Left Stick Y if the scale is 1, or Gamepad Left Stick Down if the scale is -1.
+- Added directional thumbstick icons to the example project (These are custom-made based on the royalty-free ones by Xelu)
+- Exposed more widget properties with BlueprintReadWrite and EditAnywhere
+- Minor code improvements and cleanup
 
 ## 1.15
 
