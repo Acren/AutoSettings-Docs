@@ -119,6 +119,6 @@ You can provide the user with a way to reset their input mappings by switching t
 Calling `Set Player Input Preset` or `Set Player Input Preset By Tag` will reset their mappings to the specific preset, which also serves as a way to reset to the defaults if the project does not have multiple input presets.
 The example project demonstrates this using a preset switcher.
 
-You can also manually clear the saved inputs from the `Input.ini` config file by deleting them from the `[/Script/AutoSettings.InputMappingManager]` section, then restarting the editor.
+You can also manually clear the saved inputs from the `Input.ini` config file by deleting them from the `[/Script/AutoSettings.InputMappingManager]` section, **then restarting the editor.**
 
 For more information on config files, see the [config files page.](/config-files/)

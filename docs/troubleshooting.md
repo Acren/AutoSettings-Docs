@@ -69,6 +69,12 @@ If the logs are appearing correctly, then the problem is likely with the CVar it
 
 [Troubleshooting CVars](/troubleshooting/#console-variables-are-not-working)
 
+# Input mappings are not working
+
+**Start by [resetting saved inputs.](/input-binding/#resetting-saved-inputs)**
+
+If something strange is saved in the editor from version updates or changing configuration, this often fixes it.
+
 # Console variables are not working
 
 If a specific CVar is not working as you'd expect, the problem is likely not with the Auto Settings plugin itself.
@@ -77,9 +83,9 @@ If a specific CVar is not working as you'd expect, the problem is likely not wit
 
 A mistake or oversight in the implementation could explain the issue.
 
-**If the CVar is part of Unreal Engine, make sure you really understand what it does**
+**If the CVar is part of Unreal Engine, check again what it's meant to do**
 
-Many CVars do not make an obvious visual difference in the viewport and an incomplete understanding could be causing you to think it's not working when it actually is.
+Many CVars do not make an obvious visual difference in the viewport and there may be some sort of misunderstanding causing it to appear like it's not working when it actually is.
 
 # Further troubleshooting
 
