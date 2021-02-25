@@ -43,7 +43,7 @@ Auto Settings can optionally substitute textures instead, which is particularly 
 
 Sets of key icons can be configured in the **AutoSettings** page of your project settings.
 
-> The example project uses Xelu’s free prompts pack found [here](https://opengameart.org/content/free-keyboard-and-controllers-prompts-pack)
+> *The example project uses Xelu’s free prompts pack found [here](https://opengameart.org/content/free-keyboard-and-controllers-prompts-pack)*
 
 These key icon sets use gameplay tags for identification, which can be prioritised globally or on a per-widget basis, or both at the same time.
 
