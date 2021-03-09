@@ -119,6 +119,41 @@ If specified, the value in the file will apply when the engine is initialized, w
 
 For setting quality levels on different devices, it's recommended to use the [Device Profiles](https://docs.unrealengine.com/en-US/Platforms/DeviceProfiles/index.html) system.
 
+# Auto-detect scalability settings based on hardware performance
+
+It's possible to use the Unreal hardware benchmark to set the scalability settings to recommended values based on the user's hardware performance.
+The `Auto Detect` function, which can be called from both Blueprint and C++, first runs the Unreal hardware benchmark and then applies and saves the resulting settings to the Auto Settings config.
+There is a working example of a button which does this in the [example project](/example-project).
+
+The performance threshold points that Unreal uses for each recommended setting level are controlled by config files.
+
+The default settings are found in `BaseScalability.ini` in the engine:
+
+```
+[ScalabilitySettings]
+; PerfIndexThresholds define the thresholds that determine what the autodetected quality should be for each group.
+; When you auto detect performance, both a CPUIndex and GPUIndex are calculated on the machine.
+; Use the console command "scalability auto" to print these values for a machine.
+; The type of perfindex used to determine the quality for a group is either the GPU, CPU or Min.
+; GPU means the quality is based on the speed of the graphics card. CPU means the quality is based on the processor, and Min means the group quality is based on the slower of either the CPU or GPU.
+; Each group has a type followed by three numbers.
+; The first number is the perfindex threshold that changes quality from 0 to 1. The second is the threshold from 1 to 2, the third is the threshold from 2 to 3.
+PerfIndexThresholds_ResolutionQuality="GPU 18 42 115"
+PerfIndexThresholds_ViewDistanceQuality="Min 18 42 105"
+PerfIndexThresholds_AntiAliasingQuality="GPU 18 42 115"
+PerfIndexThresholds_ShadowQuality="Min 18 42 105"
+PerfIndexThresholds_PostProcessQuality="GPU 18 42 115"
+PerfIndexThresholds_TextureQuality="GPU 18 42 115"
+PerfIndexThresholds_EffectsQuality="Min 18 42 105"
+PerfIndexThresholds_FoliageQuality="GPU 18 42 115"
+PerfIndexThresholds_ShadingQuality="GPU 18 42 115"
+
+; This is the screen percentage for the resolution quality, corresponding to 25% pixels, 50% pixels, 75% pixels, and 100% pixels
+PerfIndexValues_ResolutionQuality="50 71 87 100 100"
+```
+
+To override them in your own project, you should set up a `ScalabilitySettings` section in the `DefaultScalability.ini` config file in your own project (create it if it doesn't exist).
+
 # Value Masks
 
 **Value Masks** can be used to split console variables into multiple independent settings in your menu.
