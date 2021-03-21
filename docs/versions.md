@@ -7,6 +7,7 @@ The example project does not always need to match, but it is recommended to use 
 
 Plugin  | Engine | Example Project
 ------- | ------ | ------------
+1.17    | 4.26   | 1.16
 1.16.1  | 4.26   | 1.16
 1.16    | 4.26   | 1.16
 1.15    | 4.26   | 1.15
@@ -39,6 +40,11 @@ Plugin  | Engine | Example Project
 1.0     | 4.17   | 1.0
 
 # Release Notes
+
+## 1.17
+
+- Mouse axis directions are now captured by BindCapturePrompt. Now you can capture inverted mappings such as Mouse Down for Look Up, etc, instead of only the axis itself.
+- Fixed a bug causing the default key for an axis mapping to not be captured after an axis key was bound (e.g. MoveForward not being set to W again after it was bound to Mouse Y axis)
 
 ## 1.16.1
 
