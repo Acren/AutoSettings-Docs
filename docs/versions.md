@@ -7,6 +7,7 @@ The example project does not always need to match, but it is recommended to use 
 
 Plugin  | Engine | Example Project
 ------- | ------ | ------------
+1.17.1  | 4.26   | 1.16
 1.17    | 4.26   | 1.16
 1.16.1  | 4.26   | 1.16
 1.16    | 4.26   | 1.16
@@ -41,6 +42,10 @@ Plugin  | Engine | Example Project
 
 # Release Notes
 
+## 1.17.1
+
+- Fixed a crash in the previous version when binding input for a mapping group which is empty on the base preset
+
 ## 1.17
 
 - Mouse axis directions are now captured by BindCapturePrompt. Now you can capture inverted mappings such as Mouse Down for Look Up, etc, instead of only the axis itself.
@@ -48,7 +53,7 @@ Plugin  | Engine | Example Project
 
 ## 1.16.1
 
-- Fixed a bug with the directional axis icons in 1.16 where inverted icons were being shown for the Gamepad Right Stick Y axis because of how Unreal inverts it under the hood. The plugin should now "flip back" the displayed axis if the axis mapping has the -1 scale, which is how Right Stick Y is normally mapped to undo the inversion.
+- Fixed a bug with the directional axis icons in 1.16 where inverted icons were being shown for the Gamepad Right Stick Y axis because of how Unreal or the underlying drivers invert it under the hood. The plugin should now "flip back" the displayed axis if the axis mapping has the -1 scale, which is how Right Stick Y is normally mapped to undo the inversion.
 
 ## 1.16
 
