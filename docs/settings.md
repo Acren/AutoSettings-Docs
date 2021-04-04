@@ -106,6 +106,19 @@ If this is set up correctly, the CVar should be registered, loading it’s value
 Check the [example project](/example-project) for full implementation of custom CVars to control gameplay elements and audio levels.  
 Or [read more about how to set up audio levels](#audio-levels) specifically.
 
+## Manually setting the CVar
+
+In most cases, there is no need to manually set the CVar value as it's controlled automatically by the [Setting Widget](#setting-widgets).  
+
+If you do find the need, *this could be indicitive that you are not using the plugin correctly*, though there are still some legitimate cases where this is helpful.
+
+To directly set CVar values you can use functions such as **Set Integer CVar** to do this. This is similar to typing it in the console.
+
+Note that the **Set CVar** functions are the same as **applying** a setting, not **saving** it, so the new value will not be saved to config.
+
+To save a setting to config, instead use the **Save Setting** function with the CVar as the Key, and the appropriate stringified value.  
+This will cause the value to be applied again when new instances of the game are opened.
+
 # Default Values
 
 It's likely you'll at some point want to change the default values of your settings.
