@@ -66,18 +66,23 @@ There are a few components to doing this:
 2. Using the CVar to control something in the game
 3. Adding a setting for the CVar (already covered)
 
-Registering and using CVars in C++ is covered in the [Unreal documentation](https://docs.unrealengine.com/latest/INT/Programming/Development/Tools/ConsoleManager/index.html).
+## Registering the CVar
 
-There are also functions in this plugin to expose this to Blueprint, so I’ll outline them here.
+Registering and using CVars in C++ is covered in the [Unreal documentation](https://docs.unrealengine.com/latest/INT/Programming/Development/Tools/ConsoleManager/index.html). If you are using C++, this is the best way to register a CVar.
 
-Registering CVars is best done as early as possible, so unless you can use C++ I would suggest doing it in your GameInstance class in the **Init** event.
+There are also functions in this plugin to expose this to Blueprint, which we'll cover here.
+
+Registering CVars is best done as early as possible, so if you are registering it in Blueprint it would ideally be in your GameInstance class in the **Init** event.
 
 ![Image](/images/image10.png)
 
-Here you can call functions to register float, integer, or string CVars.
+Here you can call functions to register **float**, **integer**, **string**, or **bool** CVars.
 It’s also worth noting that these functions also check the settings config to see if there is a value stored, in which case that value is loaded instead of the default value parameter.
 
 You can call these functions anywhere, but Init is the earliest point in Blueprint.
+
+## Connecting the CVar
+
 To actually make your new CVar do something, you’ll need to make your game check the CVar or respond to it in some way.
 
 To check the value you can use the getter functions like this anywhere in your game:
@@ -98,7 +103,8 @@ You can also register and bind a callback for a CVar at the same time, making it
 
 If this is set up correctly, the CVar should be registered, loading it’s value from the config if it is saved, and having some effect on the game when it is changed through the console. The only other thing that needs to be done is adding a menu setting to let the user control it as explained in the **Adding Settings** section.
 
-Check the example project for full implementation of custom CVars to control gameplay elements and audio levels.
+Check the [example project](/example-project) for full implementation of custom CVars to control gameplay elements and audio levels.  
+Or [read more about how to set up audio levels](#audio-levels) specifically.
 
 # Default Values
 
@@ -182,12 +188,12 @@ In the WindowModeValueMask subclass, this would take the *1920x1080wf* console v
 
 # Audio Levels
 
-**Audio levels** are a common way to use custom settings in Auto Settings. The plugin itself does not treat audio levels differently to any other setting, so you should add a setting to your project for each audio level and have them modify the **Sound Classes** in your project.
+**Audio levels** are a common way to use custom settings in Auto Settings. The plugin itself does not treat audio levels differently to any other setting, so the correct way to use them is to add a setting to your project for each audio level and have them modify the **Sound Classes** in your project.
 
 A working setup with multiple audio levels is implemented in the [example project](/example-project), though the following steps describe how to set one up from scratch:
 
 1. Create a **Sound Class** asset for the new audio level
-2. If applicable, set up parent or child Sound Classes. For example, if the new audio level is for **Sound Effects**, you may want to add the new **Sound Effect Sound Class** as a child of a **Master Sound Class** that you have already.
+2. If applicable, set up parent or child Sound Classes. For example, if the new audio level is for **Sound Effects**, you may want to add the new **Sound Effect Sound Class** as a child of a **Master Sound Class** that you have already. This means the master volume will affect the sound effects.
 
 	![Image](/images/soundclasses.png)
 
