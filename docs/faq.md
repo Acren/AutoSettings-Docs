@@ -1,10 +1,6 @@
-##### *My project is crashing, what should I do?*
+##### *I'm running into a problem, what should I do?*
 
-See the [troubleshooting page.](/troubleshooting/#project-is-crashing)
-
-##### *My settings aren't working, what should I do?*
-
-See the [troubleshooting page.](/troubleshooting/#settings-are-not-working)
+See the [troubleshooting page.](/troubleshooting)
 
 ##### *Why don't settings save when running Standalone mode from editor?*
 
